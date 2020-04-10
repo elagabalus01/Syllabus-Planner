@@ -1,0 +1,94 @@
+{
+    "materia": "Bioquímica",
+    "salon": "001",
+    "color": "3",
+    "horarios": [
+        {
+            "dia":"Lu",
+            "horaInicio":"10:00",
+            "horaFin":"12:00"
+        },
+        {
+            "dia":"Ma",
+            "horaInicio":"11:00",
+            "horaFin":"15:00"
+        }
+    ],
+    "temas": [
+        {
+            "numero":1,
+            "tema": "Distinción entre lo vivo y lo no vivo",
+            "duracion": 10.0,
+            "subtemas": [
+                "1.1 Características de la materia viva",
+                "1.2 Origen de los compuestos orgánicos",
+                "1.3 Propiedades de los compuestos orgánicos:\n\trepresentación de las estructuras demoléculas orgánicas\n1.3.1 Características: isomería, valencia, electrones de valencia, tipo de enlace y resonancia"
+            ]
+        },
+        {
+            "numero":2,
+            "tema": "Estructura e importancia del agua en el metabolismo celular",
+            "duracion": 6.0,
+            "subtemas": [
+                "2.1 Propiedades fisicoquímicas del agua y su relación con procesos fisiológicos",
+                "2.2 Puentes y enlaces de hidrógeno",
+                "2.3 Interacciones electrostáticas",
+                "2.4 Interacciones no polares",
+                "2.5 Disociación del agua\n\t2.5.1 Concepto de pH y pKa\n\t2.5.2 Cálculos de pH y pKa\n\t2.5.2 Amortiguadores"
+            ]
+        },
+        {
+            "numero":3,
+            "tema": "Necesidades nutricionales de la célula",
+            "duracion": 14.0,
+            "subtemas": [
+                "3.1 Jerarquía de la organización estructural de las células",
+                "3.2 Moléculas de importancia biológica y nutricional\n\t3.2.1 Estructura\n\t3.2.2 Clasificación\n\t3.2.3 Funciones de cada molécula"
+            ]
+        },
+        {
+            "numero":4,
+            "tema": "Catalizadores biológicos. Las enzimas",
+            "duracion": 10.0,
+            "subtemas": [
+                "4.1 Clasificación y especificidad\r",
+                "4.2 Componentes del sistema enzimático",
+                "4.3 Cinética",
+                "4.4 Regulación de la actividad enzimática\n\t4.4.1 Función de las hormonas y nutrimentos en la actividad enzimática"
+            ]
+        },
+        {
+            "numero":5,
+            "tema": "Vitaminas. Función en el metabolismo medio",
+            "duracion": 10.0,
+            "subtemas": [
+                "5.1 Introducción a las vitaminas\n\t5.1.1 Definición y clasificación",
+                "5.2 Vitaminas que participan en el metabolismo"
+            ]
+        },
+        {
+            "numero":6,
+            "tema": "Vitaminas hidrosolubles. Complejo B y vitamina C",
+            "duracion": 12.0,
+            "subtemas": [
+                "6.1 Historia de las vitaminas",
+                "6.2 Estructura y formas activas",
+                "6.3 Coenzimas y regulación\r",
+                "6.4 Funciones biológicas\n\t6.4.1 Deficiencias y toxicidad",
+                "6.5 Fuentes y recomendaciones"
+            ]
+        },
+        {
+            "numero":7,
+            "tema": "Vitaminas liposolubles. A, D, E y K",
+            "duracion": 10.0,
+            "subtemas": [
+                "7.1 Historia de las vitaminas",
+                "7.2 Estructura y formas activas",
+                "7.3 Coenzimas y regulación\r",
+                "7.4 Funciones biológicas\n\t7.4.1 Deficiencias y toxicidad",
+                "7.5 Fuentes y recomendaciones\r"
+            ]
+        }
+    ]
+}
