@@ -101,6 +101,8 @@ class MainController(CalendarizadorController):
             self.updateHorarios()
         except FileNotFoundError:
             print("Se canceló")
+        except:
+            messagebox.showinfo(title="Error", message="No se pudo abrir el archivo")
    
     def guardar(self,event=None):
         self.readForm()
