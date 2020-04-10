@@ -1,5 +1,5 @@
-from dataTypes.Materia import Materia
-from googleCalendarAPI.CreadorCalendario import crearNuevoCalendario,\
+from .dataTypes.Materia import Materia
+from .googleCalendarAPI.CreadorCalendario import crearNuevoCalendario,\
 crearEvento,getListaCalendario,eliminarCalendario
 from datetime import timedelta,datetime
 def cargarTemario(jsonPath,calendario):

@@ -2,10 +2,10 @@ import datetime,pickle,os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-import googleCalendarAPI
-import pkg_resources
-credentials=pkg_resources.resource_filename(googleCalendarAPI.__name__,"credentials.json")
-storageToken=pkg_resources.resource_filename(googleCalendarAPI.__name__,"token.pickle")
+#import googleCalendarAPI
+#import pkg_resources
+credentials="credentials.json"
+storageToken="token.pickle"
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 CALENDARIOESCUELA="Calendario escuela 2020-1"
 

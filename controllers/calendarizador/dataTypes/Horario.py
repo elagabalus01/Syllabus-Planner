@@ -23,4 +23,5 @@ class Horario(object):
     def getHoraFin(self):
         return self.horaFin
 if __name__=="__main__":
-    pass
+    h=Horario("Ma","15:00","16:00")
+    print(h.__dict__)

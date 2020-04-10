@@ -6,6 +6,7 @@ from views.view import View,EditWindow
 from models.Materia import Materia
 from models.Tema import Tema
 from models.Horario import Horario
+from .calendarizadorController import CalendarizadorController
 
 def limpiarCadena(string):
     string=string.capitalize()
@@ -40,15 +41,11 @@ def validarLista(valor):
         print(valor)
         messagebox.showinfo(title="Prueba", message="No es un número")
         return False
-class MainController(object):
+class MainController(CalendarizadorController):
     """docstring for MainController"""
     def __init__(self):
-        self.view=View()
-        self.model=Materia()
+        super().__init__()
         # self.model.recoverJson('C:/Users/elagabalus/3D Objects/prueba.json')
-        self.view.title("Temario a Json")
-        self.view.geometry("546x440+480+150")
-        self.file=None
         ''' PRUEBAS '''
         self.configurarComandos()
         # self.setForm()
