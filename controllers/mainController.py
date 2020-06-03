@@ -45,6 +45,7 @@ class MainController(CalendarizadorController):
     """docstring for MainController"""
     def __init__(self):
         super().__init__()
+        self.model=Materia()
         # self.model.recoverJson('C:/Users/elagabalus/3D Objects/prueba.json')
         ''' PRUEBAS '''
         self.configurarComandos()
@@ -65,6 +66,7 @@ class MainController(CalendarizadorController):
         self.view.formTemas.subtemas.bind('<Delete>',self.eliminarSubtema)
 
         self.view.menu.menuArchivo.add_command(label="Abrir",command=self.abrir)
+        self.view.menu.menuArchivo.add_command(label="Guardar",command=self.guardar)
         self.view.menu.menuArchivo.add_command(label="Guardar como",command=self.guardarComo)
         self.view.menu.menuArchivo.add_command(label="Cerrar",command=self.cerrar)
 
@@ -91,7 +93,7 @@ class MainController(CalendarizadorController):
     def abrir(self,event=None):
         try:
             ftypes = [('json files', '*.json'), ('All files', '*')]
-            filePath = filedialog.askopenfilename(filetypes=ftypes,initialdir="~/Documents")
+            filePath = filedialog.askopenfilename(filetypes=ftypes,initialdir="~/3D Objects/temarios")
             self.file=filePath
             self.view.title(self.file)
             self.model=Materia()
@@ -115,12 +117,15 @@ class MainController(CalendarizadorController):
     def guardarComo(self):
         try:
             file=filedialog.asksaveasfile(mode='w',
-                defaultextension=".json",initialdir="~/Documents",filetypes=(("json file", ".json"),("todo", "*")))
+                defaultextension=".json",initialdir="~/3D Objects/temarios",
+                initialfile=self.model.materia,
+                filetypes=(("json file", ".json"),("todo", "*")))
             self.file=file.name
             with open(self.file,'w') as file:
                 file.write(self.model.toJson())
             self.updateViewNombre()
         except AttributeError:
+            messagebox.showinfo(title="Error", message="No se pudo guardar el archivo")
             print("No se selecciono nombre para el archivo")
     
     def cerrar(self,event=None) :
@@ -129,6 +134,8 @@ class MainController(CalendarizadorController):
         self.file=None
         self.view.formTemas.temas["menu"].delete(0, "end")
         self.view.formTemas.currentTema.set('--')
+        self.view.formHorarios.horarios["menu"].delete(0, "end")
+        self.view.formHorarios.currentHorario.set('--')
         self.quitarValidaciones()
         self.vaciarFomrulario()
         self.vaciarHorario()
@@ -147,7 +154,7 @@ class MainController(CalendarizadorController):
         try:
             self.model.materia=limpiarCadena(self.view.formDatos.materia.get())
             if not len(self.model.materia)>0:
-                raise Exception
+                raise Exception('El nombre de la materia es necesario')
             try:
                 self.model.salon=self.view.formDatos.salon.get()
                 if not len(self.model.salon)>0:
@@ -159,6 +166,7 @@ class MainController(CalendarizadorController):
             except Exception as e:
                 messagebox.showinfo(title="Prueba", message="Es necesario escribir el nombre del salon")
         except Exception as e:
+            print(e)
             messagebox.showinfo(title="Prueba", message="Es necesario escribir el nombre de la materia")
     
     def vaciarFomrulario(self):
