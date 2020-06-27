@@ -1,12 +1,10 @@
-import sys
-sys.path.append("..")
 from tkinter import BOTH, END, LEFT,filedialog
 from tkinter import messagebox
 from views.view import View,EditWindow
 from models.Materia import Materia
 from models.Tema import Tema
 from models.Horario import Horario
-from .calendarizadorController import CalendarizadorController
+from controllers.calendarizadorController import CalendarizadorController
 
 def limpiarCadena(string):
     string=string.capitalize()
@@ -103,8 +101,8 @@ class MainController(CalendarizadorController):
             self.updateHorarios()
         except FileNotFoundError:
             print("Se canceló")
-        except:
-            messagebox.showinfo(title="Error", message="No se pudo abrir el archivo")
+        # except:
+        #     messagebox.showinfo(title="Error", message="No se pudo abrir el archivo")
    
     def guardar(self,event=None):
         self.readForm()
@@ -115,10 +113,12 @@ class MainController(CalendarizadorController):
             self.guardarComo()
 
     def guardarComo(self):
+        filePath=self.model.materia
+        print(self.model.toJson())
         try:
             file=filedialog.asksaveasfile(mode='w',
                 defaultextension=".json",initialdir="~/3D Objects/temarios",
-                initialfile=self.model.materia,
+                initialfile=filePath,
                 filetypes=(("json file", ".json"),("todo", "*")))
             self.file=file.name
             with open(self.file,'w') as file:
@@ -182,10 +182,7 @@ class MainController(CalendarizadorController):
         horaFin=self.view.formHorarios.horaFin.get()
         if dia not in listaHorarios:
             print("Aun no existia el horario")
-            nuevoHorario=Horario()
-            nuevoHorario.dia=dia
-            nuevoHorario.horaInicio=horaInicio
-            nuevoHorario.horaFin=horaFin
+            nuevoHorario=Horario(dia,horaInicio,horaFin)
             self.model.horarios.append(nuevoHorario)
             self.view.formHorarios.horarios["menu"].add_command(label=nuevoHorario.dia,command=lambda value=nuevoHorario.dia: self.setHorario(value))
         else:

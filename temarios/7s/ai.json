@@ -1,0 +1,81 @@
+{
+    "materia": "Inteligencia artificial",
+    "salon": "h-265",
+    "color": 1,
+    "horarios": [
+        {
+            "horaInicio": "11:20",
+            "horaFin": "14:00",
+            "dia": "Lu"
+        }
+    ],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Introducción a la inteligencia artificial",
+            "duracion": 4.0,
+            "subtemas": [
+                "1.1 Facetas del comportamiento inteligente.",
+                "1.2 Formas de hacer inteligencia artificial.\r",
+                "1.3 Generalidades de aplicaciones desarrolladas y en desarrollo",
+                "1.4 Subcampos de la inteligencia artificial.",
+                "1.5 Relaciones de la inteligencia artificial con otras disciplinas."
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "Agentes inteligentes y ambientes",
+            "duracion": 4.0,
+            "subtemas": [
+                "2.1 Estructura general de agentes.\n\t2.1.1 Agentes reflejo simple.\n\t2.1.2 Agentes basados en logro de metas.\n\t2.1.3 Agentes basados en logro del mejor desempeño.",
+                "2.2 Ambientes.\n2.2.1 Tipos de ambientes.",
+                "1.5 Relaciones de la inteligencia artificial con otras disciplinas."
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "Representación de problemas y búsqueda de soluciones",
+            "duracion": 8.0,
+            "subtemas": [
+                "3.1 Representación en espacio de estados.\r",
+                "3.2 Búsqueda de soluciones en espacio de estados.\n3.2.1 Métodos de búsqueda ciega.\n3.2.2 Métodos de búsqueda basados en conocimiento.\n3.2.3 Métodos de búsqueda con adversarios.",
+                "3.3 Representación reducida de problemas y búsqueda de soluciones.\r",
+                "3.4 Solución de problemas mediante satisfacción de restricciones.\r"
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "Razonamiento ",
+            "duracion": 16.0,
+            "subtemas": [
+                "4.1 Representación y uso de conocimiento.\n4.1.1 Reglas.\n4.1.2 Redes semánticas.\n4.1.3 Cuadros de Minsky.\n4.1.4 Lógica.",
+                "4.2 Razonamiento progresivo.",
+                "4.3 Razonamiento regresivo.",
+                "4.4 Razonamiento con incertidumbre.\n4.4.1 Factores de certeza.\n4.4.2 Razonamiento probabilístico.\n4.4.3 Razonamiento difuso."
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "Modelos de ia ",
+            "duracion": 24.0,
+            "subtemas": [
+                "5.1 Modelos probabilísticos.\n\t5.1.1 Redes Bayesianas.\n\t5.1.2 Modelos de Markov.",
+                "5.2 Modelos con base en reglas.\n\t5.2.1 Árboles de decisión/regresión.",
+                "5.3 Modelos bioinspirados.\n\t5.3.1 Redes neuronales: perceptron.\n\t5.3.2 Computación evolutiva: algoritmos genéticos.",
+                "5.4 Modelos para toma de decisiones.\r"
+            ]
+        },
+        {
+            "numero": 6,
+            "tema": "Aplicaciones",
+            "duracion": 8.0,
+            "subtemas": [
+                "6.1 Visión",
+                "6.2 Lenguaje natural.\n\t6.2.1 Reconocimiento, síntesis, generación de lenguaje natural.\n\t6.2.2 Texto y habla.",
+                "6.3 Robótica.",
+                "6.4 Sistemas expertos.",
+                "6.5 Ambientes gráficos interactivos."
+            ]
+        }
+    ]
+}

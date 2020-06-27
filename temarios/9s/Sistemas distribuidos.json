@@ -1,0 +1,96 @@
+{
+    "materia": "Sistemas distribuidos",
+    "salon": "h265",
+    "color": 1,
+    "horarios": [],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Introducción",
+            "duracion": 6.0,
+            "subtemas": [
+                "1.1 Introducción a los sistemas distribuidos.\r",
+                "1.2 Clasificación de los modelos: modelos paralelos de la máquina (SIMD, MIMD, SISD, MISD): taxonomía de\nFlynn, clasificación de los manipuladores, paso de mensajes",
+                "1.3 Redes de datos y comunicación cliente/servidor.\r",
+                "1.4 Naming y binding."
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "Sincronización",
+            "duracion": 8.0,
+            "subtemas": [
+                "2.1 Relojes físicos y lógicos: algoritmos de sincronización de reloj, marcas de tiempo de Lamport, marcas de\ntiempo de vectores.",
+                "2.2 Control de concurrencia",
+                "2.3 Transacciones.",
+                "2.4 Sincronización externa e interna.",
+                "2.5 Sincronización de reloj.",
+                "2.6 Relojes lógicos",
+                "2.7 Grupo de comunicación",
+                "2.8 Exclusión mutua distribuida y algoritmos de elección.",
+                "2.9 Proceso de migración y estrategias asignación."
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "Algoritmos distribuidos",
+            "duracion": 16.0,
+            "subtemas": [
+                "3.1 Concurrencia.",
+                "3.2 Calendarización",
+                "3.3 Consenso y elección",
+                "3.4 Detención de la terminación.",
+                "3.5 Tolerancia a fallos.\r",
+                "3.6 Estabilidad.\r"
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "Arquitecturas distribuidas ",
+            "duracion": 10.0,
+            "subtemas": [
+                "4.1 Tolerancia a fallas",
+                "4.2 Clusters.\r",
+                "4.3 Virtualización",
+                "4.4 Proceso de migración y estrategias de asignación",
+                "4.5 Redes sin servidores",
+                "4.6 Grid computing.\r",
+                "4.7 Cómputo en la nube (cloud computing).\r",
+                "4.8 Internet of things"
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "Sistemas de archivos distribuidos",
+            "duracion": 8.0,
+            "subtemas": [
+                "5.1 NFS.",
+                "5.2 AFS.",
+                "5.3 Cassandra."
+            ]
+        },
+        {
+            "numero": 6,
+            "tema": "Sistemas extremo a extremo (p2p) ",
+            "duracion": 10.0,
+            "subtemas": [
+                "6.1 Introducción.",
+                "6.2 Modelo Naspter",
+                "6.3 Middleware P2P",
+                "6.4 Encaminamiento de la superposición",
+                "6.5 Planet Lab."
+            ]
+        },
+        {
+            "numero": 7,
+            "tema": "Transacciones distribuidas",
+            "duracion": 6.0,
+            "subtemas": [
+                "7.1 Protocolos de Atomic Commit",
+                "7.2 Control de concurrencia en transacciones distribuidas.\r",
+                "7.3 Deadlocks distribuidas.\r",
+                "7.4 Recuperacion de transacciones.\r"
+            ]
+        }
+    ]
+}

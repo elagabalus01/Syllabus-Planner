@@ -1,0 +1,86 @@
+{
+    "materia": "Ética profesional",
+    "salon": "H265",
+    "color": 1,
+    "horarios": [],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Filosofía, ética y moral: marco conceptual",
+            "duracion": 8.0,
+            "subtemas": [
+                "1.1 Conceptos fundamentales y aspectos históricos de la filosofía y la ética.",
+                "1.2 La moral como objeto de estudio de la ética.",
+                "1.3 Responsabilidad y juicio moral.",
+                "1.4 Ética y sociedad.",
+                "1.5 Estudio y presentación de casos."
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "Problemas éticos de la sociedad contemporánea",
+            "duracion": 4.0,
+            "subtemas": [
+                "2.1 Características de la sociedad globalizada en México.\r",
+                "2.2 La industria y los servicios.",
+                "2.3 La problemática de la innovación tecnológica.",
+                "2.4 La formación del ingeniero.",
+                "2.5 Los grandes vicios de la sociedad contemporánea: la corrupción, la codicia, el individualismo\nexacerbado, etc",
+                "2.6 Estudio y presentación de casos."
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "Axiología en la ingeniería",
+            "duracion": 4.0,
+            "subtemas": [
+                "3.1 La axiología como disciplina de la ética: etimología, objeto de estudio, naturaleza de los valores.\r",
+                "3.2 Función de los valores.",
+                "3.3 Rasgos de los valores.",
+                "3.4 Clases de valores: morales, económicos, religiosos, empresariales, etc.\r",
+                "3.5 Valores y desarrollo tecnológico",
+                "3.6 Valores en la empresa moderna y su impacto en la sociedad",
+                "3.7 Valores del profesional en ingeniería.",
+                "3.8 Estudio y presentación de casos."
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "Deontología en la ingeniería",
+            "duracion": 5.0,
+            "subtemas": [
+                "4.1 Ética, trabajo y profesión.\r",
+                "4.2 Instituciones y sociedades profesionales que regulan la actividad profesional",
+                "4.3 Códigos de ética: rasgos fundamentales y beneficios de su aplicación.",
+                "4.4 Código deontológico del profesional de ingeniería.",
+                "4.5 Código deontológico de la empresa, cámaras industriales, asociaciones profesionales, autoridades\ngubernamentales y organizaciones sindicales.\r",
+                "4.6 Recomendaciones deontológicas de los organismos internacionales relacionados con la industria y el\nquehacer del ingeniero.",
+                "4.7 Estudio y presentación de casos.\r"
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "Conciencia crítica y responsabilidad social",
+            "duracion": 5.0,
+            "subtemas": [
+                "5.1 Libertad, conciencia ética y responsabilidad.",
+                "5.2 Rasgos fundamentales de la conciencia crítica: autarquía, autonomía, asertividad, creatividad,\ntolerancia, etc.",
+                "5.3 Sociedad y derechos humanos",
+                "5.4 Responsabilidad social en el ejercicio profesional de la ingeniería: aplicaciones tecnológicas,\nimplantación de industrias, impacto ambiental, actividades académicas y de investigación, etc",
+                "5.5 Normas internacionales que regulan la responsabilidad social y su aplicación en la ingeniería",
+                "5.6 Estudio y presentación de casos.\r"
+            ]
+        },
+        {
+            "numero": 6,
+            "tema": "La ética profesional del ingeniero en la sociedad del conocimiento",
+            "duracion": 6.0,
+            "subtemas": [
+                "6.1 Conceptualización de la sociedad del conocimiento",
+                "6.2 La necesidad de una ética en la concepción de la sociedad del conocimiento",
+                "6.3 El rol del ingeniero en la sociedad del conocimiento",
+                "6.4 Estudio y presentación de casos.\r"
+            ]
+        }
+    ]
+}

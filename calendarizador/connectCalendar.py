@@ -1,11 +1,8 @@
-from .dataTypes.Materia import Materia
+from models.Materia import Materia
 from .googleCalendarAPI.CreadorCalendario import crearNuevoCalendario,\
 crearEvento,getListaCalendario,eliminarCalendario
 from datetime import timedelta,datetime
-def cargarTemario(jsonPath,calendario):
-    materia=Materia(jsonPath)
-    materia.ordenarEnCalendario(calendario)
-    return materia
+
 def materia2CalendarTemplate(materia,tema,subtema):
     horario=None
     for clase in materia.horarios:
@@ -35,6 +32,7 @@ def materia2CalendarTemplate(materia,tema,subtema):
       }
     }
     return evento
+
 def dia2CalendarTemplate(materia,dia):
     horario=None
     for clase in materia.horarios:
@@ -64,6 +62,7 @@ def dia2CalendarTemplate(materia,dia):
       }
     }
     return evento
+
 def apiConnect(materia,calendarioID):
     for tema in materia.getTemas():
         for subtema in tema.getSubtemas():
@@ -79,6 +78,7 @@ def eliminarCaledarioCreados(nombre):
     listaDeCalendarioID=[x['id'] for x in listaDeCalendario if x['summary']==nombre]
     for id in listaDeCalendarioID:
         eliminarCalendario(id)
+
 def getCalendarID(nombre):
     calendarioID=None
     listaDeCalendarios=getListaCalendario()
@@ -88,6 +88,7 @@ def getCalendarID(nombre):
     else:
         calendarioID=listaDeCalendarioID[0]
     return calendarioID
+
 def generarCalendario(inicio,semanas):
     inicio=datetime.strptime(inicio,'%d-%m-%Y')
     day_delta = timedelta(weeks=semanas)
@@ -97,6 +98,13 @@ def generarCalendario(inicio,semanas):
     for i in range((fin-inicio).days+1):
         listaDeDias.append(inicio+i*day_delta)
     return listaDeDias
+
 def calendarizarJson(nombreCalendario,jsonFile,calendario):
   calendarioID=getCalendarID(nombreCalendario)
   apiConnect(cargarTemario(jsonFile,calendario),calendarioID)
+
+def cargarTemario(jsonPath,calendario):
+    materia=Materia()
+    materia.recoverJson(jsonPath)
+    materia.ordenarEnCalendario(calendario)
+    return materia

@@ -1,0 +1,77 @@
+{
+    "materia": "Diseño digital vlsi",
+    "salon": "h-265",
+    "color": 1,
+    "horarios": [
+        {
+            "horaInicio": "15:00",
+            "horaFin": "18:00",
+            "dia": "Ma"
+        },
+        {
+            "horaInicio": "15:00",
+            "horaFin": "18:00",
+            "dia": "Sa"
+        }
+    ],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Sistemas digitales y vlsi",
+            "duracion": 3.0,
+            "subtemas": [
+                "1.1 Motivos para diseñar circuitos integrados.\r",
+                "1.2 Tecnología CMOS.",
+                "1.3 Dispositivos y fabricación."
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "Diseño e implementación de máquinas de estado finito (fsm)",
+            "duracion": 11.0,
+            "subtemas": [
+                "2.1 Autómata abstracto.\n\t2.1.1 Máquina Mealy.\n\t2.1.2 Máquina Moore.\n\t2.1.3 Máquina Medvedev.\n\t2.1.4 Relaciones entre los modelos de máquinas de estados finitos.\n\t2.1.5 Taxonomía de máquinas de estados finitos.\n\t2.1.6 Reducción de estados.Reducción de estados.",
+                "2.2 Aspectos prácticos y problemas de implementación.\n\t2.2.1 Estados parásitos y símbolos.\n\t2.2.2 Máquinas tipo Mealy, Moore, Medvedev y bits combinacionales de salida.\n\t2.2.3 Inestabilidad lógica.\n\t2.2.4 Riesgos de switcheo.\n\t2.2.5 Costos de hardware.",
+                "2.3 Cartas ASM (máquinas de estado algorítmico).\n\t2.3.1 Interacción datapath y control.\n\t2.3.2 Procesamiento de los datos.\n\t2.3.3 Lógica de control.\n\t2.3.4 Elementos y bloques constitutivos para diseño con cartas ASM (bloque de estado, bloque de decisión,bloque condicional, bloque ASM).\n\t2.3.5 Reglas de las cartas ASM.\n\t2.3.6 Uso de las cartas ASM o FSM.\n\t2.3.7 Modelos Moore y Mealy con cartas ASM.\n\t2.3.8 Consideraciones de tiempo en diseño con cartas ASM.",
+                "2.4 Ejemplos de diseño e implementación con máquinas de estados finitos y cartas ASM.\n\t2.4.1 Implementación de cartas ASM con direccionamiento por trayectoria.\n\t2.4.2 Implementación de cartas ASM con direccionamiento entrada estado.\n\t2.4.3 Implementación de cartas ASM con direccionamiento implícito.\n\t2.4.4 Implementación de cartas ASM con direccionamiento por secuenciador de por lo menos de cuatro instrucciones.\n\t2.4.4.1 Implementación de cartas ASM con direccionamiento por secuenciador de por lo menos cuatro instrucciones.\n\t2.4.5 Ejemplos de mapeo de código en lenguaje C a hardware (datapath y unidad de control)"
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "Arquitecturas de dispositivos lógicos programables",
+            "duracion": 8.0,
+            "subtemas": [
+                "3.1 Arquitecturas de dispositivos lógicos programables elementales.\n\t3.1.1 Arquitectura ROM (memoria de solo lectura).\n\t3.1.2 Arquitectura PLA (arreglo lógico programable).\n\t3.1.3 Arquitectura PAL (lógica de arreglo programable).\n\t3.1.4 Arquitectura GAL (lógica de arreglo genérico).\r",
+                "3.2 Arquitecturas de dispositivos lógicos programables modernos.\n\t3.2.1 Arquitectura teórica y arquitectura comercial de un CPLD moderno.\n\t3.2.2 Arquitectura teórica y arquitectura comercial de un FPGA moderno."
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "Diseño digital vlsi con lenguajes de descripción de hardware",
+            "duracion": 16.0,
+            "subtemas": [
+                "4.1 El proceso de diseño digital VLSI con HDLs.",
+                "4.2 Metodologías de diseño Top-Down, Bottom-Up.\r",
+                "4.3 Niveles de abstracción: transistor, compuertas, RTL, algoritmos (comportamiento).",
+                "4.4 Diseño RTL con HDLs.\n\t4.4.1 Estructuras básicas de un HDL.\n\t4.4.2 Modelado de circuitos combinacionales.\n\t4.4.3 Modelado de circuitos secuenciales.\n\t4.4.4 Modelado de pruebas para circuitos digitales.\n\t4.4.5 Terminología esencial de un HDL.",
+                "4.5 Constructores HDL para descripciones estructurales y jerárquicas.\n\t4.5.1 Instanciación de componentes.\n\t4.5.2 Estructuras iterativas.\n\t4.5.3 Parámetros genéricos.\n\t4.5.4 Operadores.\n\t4.5.5 Configuración de diseño.\n\t4.5.6 Diseño de la simulación.",
+                "4.6 Constructores HDL para descripciones concurrentes.\n\t4.6.1 Asignación concurrente de señales: asignación simple, asignación condicional, asignación selectiva.\n\t4.6.2 Asignaciones almacenadas.",
+                "4.7 Constructores HDL para descripciones por comportamiento.\n\t4.7.1 Sentencia para describir procesos.\n\t4.7.2 Lista sensitiva de un proceso.\n\t4.7.3 Descripción de sub programas.\n\t4.7.4 Descripción de librerías.\n\t4.7.5 Descripción de componentes.\n\t4.7.6 Sentencias secuenciales: \"if\", \"loop\", \"case\"."
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "Implementación de sistemas digitales con ambientes de desarrollo cad-eda",
+            "duracion": 10.0,
+            "subtemas": [
+                "5.1 Ambientes de desarrollo integrados (EDA Tools): Xilinx Webpack, Altera Quartus II Web Edition,\nModelSim®-Altera, Active-HDL-Aldec, Synplify Pro Synopsys, etc.\r",
+                "5.2 Metodología de diseño.",
+                "5.3 Captura del modelo mediante lenguajes HDL.",
+                "5.4 Compilación.",
+                "5.5 Simulación.",
+                "5.6 Síntesis",
+                "5.7 Implementación en tarjetas comerciales."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "nombre": "Sistemas Operativos",
+    "salon": "h261",
+    "color": 3,
+    "dias": [
+        0,
+        1
+    ],
+    "horas": [
+        10,
+        11
+    ],
+    "temas": [
+        {
+            "numero": 1,
+            "nombre": "Introducción a los sistemas operativos",
+            "duracion": 6.0,
+            "subtemas": [
+                "1.1 Concepto y propósito de los sistemas operativos.",
+                "1.2 Evolución de los sistemas operativos",
+                "1.3 Estructuras de los sistemas operativos: monolítico, cliente-servidor, de capas, máquina virtual, etc.",
+                "1.4 Componentes de un sistema operativo actual.",
+                "1.5 Consideraciones de diseño de un sistema operativo. Usuario único, multiusuario, una tarea, multitarea,por lotes, en línea, en tiempo real, entornos de ejecución."
+            ]
+        },
+        {
+            "numero": 2,
+            "nombre": "Administración de procesos ",
+            "duracion": 10.0,
+            "subtemas": [
+                "2.1 Procesos. Concepto y estructura.",
+                "2.2 Hilos. Concepto y estructura.\r",
+                "2.3 Estados de un proceso-hilo. Multitarea, cambio de contexto",
+                "2.4 Interrupciones y suspensiones.\r",
+                "2.5 Concurrencia.\n\t2.5.1 Exclusión mutua y sincronización.\n\t2.5.2 Bloqueos mutuos.\n\t2.5.3 Multiprocesamiento. Multinúcleos."
+            ]
+        },
+        {
+            "numero": 3,
+            "nombre": "Administración de memoria",
+            "duracion": 8.0,
+            "subtemas": [
+                "3.1 Funciones y operaciones del administrador de memoria.3.1.1 Jerarquía y organización de memoria física.3.1.2 Operaciones sobre la memoria: Conceptos de obtención, asignación y reemplazo.",
+                "3.2 Asignación de memoria contigua.3.2.1 Partición de la memoria.3.2.2 Paginación.3.2.3 Segmentación.\r",
+                "3.3 Memoria virtual.3.3.1 Concepto.3.3.2 Paginación.3.3.3 Segmentación.3.3.4 Segmentación con paginación.3.3.5 Reemplazo de páginas.\r",
+                "3.4 Hiper-paginación y conjuntos de trabajo",
+                "3.5 Obtención. Paginación por demanda y anticipada.",
+                "3.6 Almacenamiento en memoria caché."
+            ]
+        },
+        {
+            "numero": 4,
+            "nombre": "Planificación de procesos",
+            "duracion": 8.0,
+            "subtemas": [
+                "4.1 Niveles de planificación",
+                "4.2 Algoritmos de despacho de procesos.4.2.1 Tipos de despacho de procesos con y sin apropiación.4.2.2 Políticas de algoritmos de despacho de procesos. Prioridad, round robin, mayor tasa, etc",
+                "4.3 Planificación de multiprocesadores y en tiempo real.\r",
+                "4.4 Planificación de hilos.\r"
+            ]
+        },
+        {
+            "numero": 5,
+            "nombre": "Sistema de archivos",
+            "duracion": 8.0,
+            "subtemas": [
+                "5.1 Concepto y tipos de archivos.\r",
+                "5.2 Organización y acceso a archivos",
+                "5.3 Estructura de los directorios.\r",
+                "5.4 Estructura de los sistemas de archivos.\r",
+                "5.5 Métodos de asignación.",
+                "5.6 Administración del espacio libre.\r"
+            ]
+        },
+        {
+            "numero": 6,
+            "nombre": "Sistemas de entrada/salida",
+            "duracion": 8.0,
+            "subtemas": [
+                "6.1 Dispositivos de entrada/salida",
+                "6.2 Organización de las funciones de E/S",
+                "6.3 Almacenamiento intermedio de la E/S.",
+                "6.4 Planificación de discos."
+            ]
+        },
+        {
+            "numero": 7,
+            "nombre": "Sistemas distribuidos",
+            "duracion": 10.0,
+            "subtemas": [
+                "7.1 Gestión distribuida de procesos.7.1.1 Migración de procesos.7.1.2 Estados globales distribuidos.7.1.3 Exclusión mutua distribuida.7.1.4 Bloqueo mutuo distribuido.",
+                "7.2 Sistema de archivos distribuidos"
+            ]
+        },
+        {
+            "numero": 8,
+            "nombre": "Seguridad y medidas de desempeño",
+            "duracion": 6.0,
+            "subtemas": [
+                "8.1 Amenazas a la seguridad.\r",
+                "8.2 Limitaciones de seguridad en un sistema operativo.",
+                "8.3 Protección, control de acceso.",
+                "8.4 Intrusos.\r",
+                "8.5 Software maligno.",
+                "8.6 Desempeño, coprocesadores, RISC y flujo de datos.",
+                "8.7 Modelado analítico.\r"
+            ]
+        }
+    ]
+}
