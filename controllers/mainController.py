@@ -3,8 +3,14 @@ from tkinter import messagebox
 from views.view import View,EditWindow
 from models.Materia import Materia
 from models.Tema import Tema
+from models.Subtema import Subtema
 from models.Horario import Horario
 from controllers.calendarizadorController import CalendarizadorController
+
+# Apaños en cuanto a los dias
+dias=["lu","ma","mi","ma","ju","vi","sa"]
+dia2Str=lambda numDia: dias[numDia].title()
+dia2Num=lambda dia:dias.index(dia.lower())
 
 def limpiarCadena(string):
     string=string.capitalize()
@@ -96,6 +102,7 @@ class MainController(CalendarizadorController):
             self.view.title(self.file)
             self.model=Materia()
             self.model.recoverJson(filePath)
+            print(self.model)
             self.setForm()
             self.updateTemas()
             self.updateHorarios()
@@ -176,19 +183,21 @@ class MainController(CalendarizadorController):
     
     ''' CONTRUYENTO HORARIOS '''
     def readHorario(self):
-        listaHorarios=[horario.dia for horario in self.model.horarios]
-        dia=self.view.formHorarios.dia.get()
+        listaHorarios=[dia2Str(horario.dia) for horario in self.model.horarios]
+        # Leyendo el nuevo horario
+        dia=self.view.formHorarios.dia.get().title()
         horaInicio=self.view.formHorarios.horaInicio.get()
         horaFin=self.view.formHorarios.horaFin.get()
+        num_dia=dia2Num(dia)
         if dia not in listaHorarios:
             print("Aun no existia el horario")
-            nuevoHorario=Horario(dia,horaInicio,horaFin)
+            nuevoHorario=Horario(num_dia,horaInicio,horaFin)
             self.model.horarios.append(nuevoHorario)
-            self.view.formHorarios.horarios["menu"].add_command(label=nuevoHorario.dia,command=lambda value=nuevoHorario.dia: self.setHorario(value))
+            self.view.formHorarios.horarios["menu"].add_command(label=dia,command=lambda value=num_dia: self.setHorario(value))
         else:
             for horario in self.model.horarios:
-                if dia == horario.dia:
-                    horario.dia=dia
+                if num_dia == horario.dia:
+                    horario.dia=num_dia
                     horario.horaInicio=horaInicio
                     horario.horaFin=horaFin
         self.view.formTemas.currentTema.set('--')
@@ -203,13 +212,14 @@ class MainController(CalendarizadorController):
         self.vaciarHorario()
         self.guardar()
 
-    def setHorario(self,dia):
+    def setHorario(self,num_dia):
         for horario in self.model.horarios:
-            if horario.dia==dia:
-                self.view.formHorarios.currentHorario.set(horario.dia)
+            if horario.dia==num_dia:
+                dia_nombre=dia2Str(horario.dia)
+                self.view.formHorarios.currentHorario.set(dia_nombre)
                 
                 self.view.formHorarios.dia.delete(0,END)
-                self.view.formHorarios.dia.insert(0,horario.dia)
+                self.view.formHorarios.dia.insert(0,dia_nombre)
 
                 self.view.formHorarios.horaInicio.delete(0,END)
                 self.view.formHorarios.horaInicio.insert(0,horario.horaInicio)
@@ -218,11 +228,11 @@ class MainController(CalendarizadorController):
                 self.view.formHorarios.horaFin.insert(0,horario.horaFin)
     
     def updateHorarios(self):
-        listaHorarios=[horario.dia for horario in self.model.horarios]
+        listaHorarios=[dia2Str(horario.dia) for horario in self.model.horarios]
         self.view.formHorarios.horarios["menu"].delete(0, "end")
         self.view.formHorarios.currentHorario.set('--')
-        for string in listaHorarios:
-            self.view.formHorarios.horarios["menu"].add_command(label=string,command=lambda value=string: self.setHorario(value))
+        for dia_nombre in listaHorarios:
+            self.view.formHorarios.horarios["menu"].add_command(label=dia_nombre,command=lambda value=dia2Num(dia_nombre): self.setHorario(value))
     ''' CONTRUYENTO HORARIOS '''
 
 
@@ -241,8 +251,10 @@ class MainController(CalendarizadorController):
                 self.view.formTemas.duracion.insert(0,tema.duracion)
 
                 self.view.formTemas.subtemas.delete(0,END)
+
+                print(tema.subtemas)
                 for subtema in tema.subtemas:
-                    self.view.formTemas.subtemas.insert(END,subtema)
+                    self.view.formTemas.subtemas.insert(END,subtema.nombre)
     
     def readTema(self):
         listaTemas=[tema.numero for tema in self.model.temas]
@@ -254,7 +266,7 @@ class MainController(CalendarizadorController):
                     nombre=limpiarCadena(self.view.formTemas.titulo.get())
                     if not len(nombre)>0:
                         raise Exception
-                    subtemas=list(self.view.formTemas.subtemas.get(0,END))
+                    subtemas=[Subtema(subtema) for subtema in list(self.view.formTemas.subtemas.get(0,END))]
                     if numero not in listaTemas:
                         print("Aun no existia")
                         nuevoTema=Tema()

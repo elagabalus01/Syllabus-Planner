@@ -42,7 +42,7 @@ class Materia(object):
                 subtemas=[]
                 for subtema in dicSubtemas:
                     s=Subtema()
-                    s.setNombre(subtema)
+                    s.setNombre(subtema["nombre"])
                     subtemas.append(s)
                 t.subtemas=(subtemas)
                 temas.append(t)
