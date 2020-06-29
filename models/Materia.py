@@ -42,18 +42,15 @@ class Materia(object):
                 subtemas=[]
                 for subtema in dicSubtemas:
                     s=Subtema()
-                    s.setNombre(subtema["nombre"])
+                    s.setNombre(subtema)
                     subtemas.append(s)
                 t.subtemas=(subtemas)
                 temas.append(t)
             self.temas=temas
         self.duracionPromedio=0
-        for i in self.horarios:
-            self.duracionPromedio+=(datetime.combine(date.min,i.getHoraFin())-datetime.combine(date.min,i.getHoraInicio())).seconds/3600
-        self.duracionPromedio/=len(self.horarios)
 
     def toJson(self):
-        return json.dumps(self.__dict__,default=json_decoder,indent=4,ensure_ascii=False)
+        return json.dumps(self,default=json_decoder,indent=4,ensure_ascii=False)
     ''' setters '''
     def setNombre(self,_nombre):
         self.materia=_nombre
@@ -80,6 +77,12 @@ class Materia(object):
         return aux
     ''' ordenar En Calendario calendario es el calendario completo '''
     def ordenarEnCalendario(self,calendario):
+        for i in self.horarios:
+            self.duracionPromedio+=(datetime.combine(date.min,i.getHoraFin())-datetime.combine(date.min,i.getHoraInicio())).seconds/3600
+        try:
+            self.duracionPromedio/=len(self.horarios)
+        except ZeroDivisionError as e:
+            pass
         timeOut=[]
         fechasDeClase=[x for x in calendario if x.weekday() in [x.dia for x in self.horarios]]
         self.fechasDeClase=fechasDeClase
@@ -104,19 +107,39 @@ class Materia(object):
 
     ''' imprimir objeto completo '''
     def printFullObject(self):
-        print(f"{self.nombre} en el salon {self.salon}")
-        for clase in self.clases:
-            print(clase)
+        print(f"{self.materia} en el salon {self.salon}")
+        for horario in self.horarios:
+            print(horario)
         print(self.__str__())
 
 def json_decoder(objeto):
     if isinstance(objeto,time):
-        return f"{objeto.hour}:{objeto.minute}"
+        return f"{objeto.hour:02}:{objeto.minute:02}"
+    if isinstance(objeto,Materia):
+        return {
+            "materia":objeto.materia,
+            "salon":objeto.salon,
+            "color":objeto.color,
+            "horarios":objeto.horarios,
+            "temas":objeto.temas
+        }
+    if isinstance(objeto,Tema):
+        return {
+            "numero":objeto.numero,
+            "tema":objeto.tema,
+            "duracion":objeto.duracion,
+            "subtemas":objeto.subtemas
+
+        }
+    if isinstance(objeto,Subtema):
+        return objeto.nombre
     else:
         return objeto.__dict__
 
 def main():
-    materia=Materia("C:/Users/elagabalus/3D Objects/programming/python/calendarizador/dataTypes/quim.json")
-    materia.printFullObject()
+    materia=Materia()
+    materia.recoverJson("C:/Users/elagabalus/3D Objects/temarios/7s/diseño.json")
+    # materia.printFullObject()
+    print(materia.toJson())
 if __name__=="__main__":
     main()

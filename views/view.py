@@ -36,6 +36,7 @@ class View(Tk):
 
         self.menu=BarMenu(self)
         self.config(menu=self.menu)
+
 class EditWindow(Tk):
     def __init__(self,*args, **kwargs):
         Tk.__init__(self,*args, **kwargs)

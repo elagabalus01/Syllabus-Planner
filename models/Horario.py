@@ -8,7 +8,6 @@ class Horario(object):
         self.horaFin=str2time(horaFin)
     def __str__(self):
         aux=f"Dia: {self.dia}\nHoras: {self.horaInicio} - {self.horaFin}\n"
-        print(self.__dict__)
         return aux
     def setDia(self,_dia):
         self.dia=_dia
