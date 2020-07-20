@@ -1,7 +1,7 @@
 from models.Horario import Horario as HorarioModelo
-from controllers.calendarizador.dataTypes.Horario import Horario as HorarioControlador
+from models.Horario import Horario as HorarioControlador
 from models.Materia import Materia as MateriaModelo
-from controllers.calendarizador.dataTypes.Materia import Materia as MateriaControlador
+from models.Materia import Materia as MateriaControlador
 def testHorario():
     HorarioModelo()
     HorarioControlador()

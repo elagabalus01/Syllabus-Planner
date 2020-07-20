@@ -50,6 +50,7 @@ class Materia(object):
         self.duracionPromedio=0
 
     def toJson(self):
+        self.temas.sort(key=lambda x:x.numero )
         return json.dumps(self,default=json_decoder,indent=4,ensure_ascii=False)
     ''' setters '''
     def setNombre(self,_nombre):
