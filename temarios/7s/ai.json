@@ -4,9 +4,9 @@
     "color": 1,
     "horarios": [
         {
+            "dia": "Lu",
             "horaInicio": "11:20",
-            "horaFin": "14:00",
-            "dia": "Lu"
+            "horaFin": "14:00"
         }
     ],
     "temas": [

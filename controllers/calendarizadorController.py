@@ -1,4 +1,4 @@
-from calendarizador.calendarizador import calendarizar,calendarizarModelo
+from calendarizador import calendarizar,calendarizarModelo
 from controllers.topController import TopController
 from tkinter import messagebox,END
 from views.configureCalendar import CalendarConfig
@@ -12,7 +12,7 @@ class CalendarizadorController(TopController):
         self.view.menu.menuCalendarizar.add_command(label="Calendarizar",command=self.calendarizarUI)
         self.view.menu.menuCalendarizar.add_command(label="Configurar",command=self.configurarCalendario)
         # self.cal_conf_view.boton.configure(command=self.calendarizar)
-    
+
     def _read_calendar_config(self):
         win=self.cal_conf_view
         cal,fecha_inicio,num_sem=win.calendario.get(),win.fecha_inicio.get(),int(win.semanas.get())
@@ -35,7 +35,3 @@ class CalendarizadorController(TopController):
         # messagebox.showinfo(title="Hecho", message="Este temario fue calendarizado exitosamente")
     def configurarCalendario(self,event=None):
         print("Se va a configurar esa cosa")
-
-
-
-

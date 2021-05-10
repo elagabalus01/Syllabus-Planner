@@ -2,8 +2,9 @@ import datetime,pickle,os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-#import googleCalendarAPI
-#import pkg_resources
+'''
+Facade for google calendar REST API
+'''
 credentials="credentials.json"
 storageToken="token.pickle"
 SCOPES = ['https://www.googleapis.com/auth/calendar']
@@ -30,13 +31,15 @@ def crearServicio():
             pickle.dump(creds, token)
     service = build('calendar', 'v3',credentials=creds)
     return service
-''' prueba lista de calendario '''
-def getListaCalendario():
+
+def getListaCalendario()->list:
+    ''' prueba lista de calendario '''
     service=crearServicio()
     calendar_list = service.calendarList().list().execute()['items']
     return calendar_list
-''' crea un nuevo calendario '''
-def crearNuevoCalendario(nombre):
+
+def crearNuevoCalendario(nombre:str):
+    ''' crea un nuevo calendario '''
     service=crearServicio()
     calendar={
       "kind": "calendar#calendar",
@@ -47,17 +50,40 @@ def crearNuevoCalendario(nombre):
     }
     calendarioTemas = service.calendars().insert(body=calendar).execute()
     return calendarioTemas['id']
-''' elimina el nuevo calendario '''
-def eliminarCalendario(id):
+
+def eliminarCalendario(id:int):
+    ''' elimina el nuevo calendario '''
     service=crearServicio()
     valorEliminado=service.calendars().delete(calendarId=id).execute()
-''' FUNCION AÑADIR EVENTO '''
-def crearEvento(evento,calendarID):
+
+def crearEvento(evento,calendarID:int):
+    ''' FUNCION AÑADIR EVENTO '''
     service=crearServicio()
     event = service.events().insert(calendarId=calendarID, body=evento).execute()
 
-''' función principal '''
+def getCalendarID(nombre:str)->int:
+    '''
+    Returns the id of the calendar of the given name
+    '''
+    calendarioID=None
+    listaDeCalendarios=getListaCalendario()
+    listaDeCalendarioID=[x['id'] for x in listaDeCalendarios if x['summary']==nombre]
+    if len(listaDeCalendarioID)==0:
+        calendarioID=crearNuevoCalendario(nombre)
+    else:
+        calendarioID=listaDeCalendarioID[0]
+    return calendarioID
+
+def delete_calendar(nombre:str)->bool:
+    listaDeCalendario=getListaCalendario()
+    listaDeCalendarioID=[x['id'] for x in listaDeCalendario if x['summary']==nombre]
+    for id in listaDeCalendarioID:
+        eliminarCalendario(id)
+    return True
+
+
 def main():
+    ''' función principal '''
     service=crearServicio()
     colors = service.colors().get().execute()
     # Print available calendarListEntry colors.

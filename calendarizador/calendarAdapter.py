@@ -1,7 +1,7 @@
 from models.Materia import Materia
-from .googleCalendarAPI.CreadorCalendario import crearNuevoCalendario,\
-crearEvento,getListaCalendario,eliminarCalendario
-from datetime import timedelta,datetime
+from .googleCalendarAPI import (crearNuevoCalendario, crearEvento,
+    getListaCalendario, eliminarCalendario, getCalendarID)
+from .calendario import generarCalendario
 
 def materia2CalendarTemplate(materia,tema,subtema):
     horario=None
@@ -63,7 +63,11 @@ def dia2CalendarTemplate(materia,dia):
     }
     return evento
 
-def apiConnect(materia,calendarioID):
+def apiConnect(materia:Materia,calendarioID:int):
+    '''
+    Calendarize an Materia object creating a event for
+    each class with the themes to teach that day
+    '''
     for tema in materia.getTemas():
         for subtema in tema.getSubtemas():
             evento=materia2CalendarTemplate(materia,tema,subtema)
@@ -73,38 +77,36 @@ def apiConnect(materia,calendarioID):
         evento=dia2CalendarTemplate(materia,dia)
         crearEvento(evento,calendarioID)
 
-def eliminarCaledarioCreados(nombre):
-    listaDeCalendario=getListaCalendario()
-    listaDeCalendarioID=[x['id'] for x in listaDeCalendario if x['summary']==nombre]
-    for id in listaDeCalendarioID:
-        eliminarCalendario(id)
-
-def getCalendarID(nombre):
-    calendarioID=None
-    listaDeCalendarios=getListaCalendario()
-    listaDeCalendarioID=[x['id'] for x in listaDeCalendarios if x['summary']==nombre]
-    if len(listaDeCalendarioID)==0:
-        calendarioID=crearNuevoCalendario(nombre)
-    else:
-        calendarioID=listaDeCalendarioID[0]
-    return calendarioID
-
-def generarCalendario(inicio,semanas):
-    inicio=datetime.strptime(inicio,'%d-%m-%Y')
-    day_delta = timedelta(weeks=semanas)
-    fin=inicio+day_delta
-    day_delta = timedelta(days=1)
-    listaDeDias=[]
-    for i in range((fin-inicio).days+1):
-        listaDeDias.append(inicio+i*day_delta)
-    return listaDeDias
-
-def calendarizarJson(nombreCalendario,jsonFile,calendario):
-  calendarioID=getCalendarID(nombreCalendario)
-  apiConnect(cargarTemario(jsonFile,calendario),calendarioID)
-
 def cargarTemario(jsonPath,calendario):
+    ''' Loads a json file into a Materia class as previus stop to calenrize '''
     materia=Materia()
     materia.recoverJson(jsonPath)
     materia.ordenarEnCalendario(calendario)
     return materia
+
+def calendarizarJson(nombreCalendario:str,jsonFile:str,calendario:list):
+    '''
+    Calendarizes a json file into a gcalendar with a specific name
+    with a given calendar (list of datetime objects)
+    '''
+    calendarioID=getCalendarID(nombreCalendario)
+    apiConnect(cargarTemario(jsonFile,calendario),calendarioID)
+
+def calendarizar(filePath,nombreCalendario,fechaInicio,semanasDuracion):
+    '''
+    Calendarizes a json file into a gcalendar with a specific name
+    with a given start date and number of weeks
+    '''
+    calendarioID=getCalendarID(nombreCalendario)
+    apiConnect(cargarTemario(filePath,generarCalendario(fechaInicio,semanasDuracion)),calendarioID)
+
+
+def calendarizarModelo(modelo,nombreCalendario,fechaInicio,semanasDuracion):
+    '''
+    Calendarizes a Materia object into a gcalendar with a specific name
+    with a given start date and number of weeks
+    '''
+    calendarioID=getCalendarID(nombreCalendario)
+    calendario=generarCalendario(fechaInicio,semanasDuracion)
+    modelo.ordenarEnCalendario(calendario)
+    apiConnect(modelo,calendarioID)

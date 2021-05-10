@@ -1,20 +1,12 @@
-from models.Horario import Horario as HorarioModelo
-from models.Horario import Horario as HorarioControlador
-from models.Materia import Materia as MateriaModelo
-from models.Materia import Materia as MateriaControlador
+from models import Materia,Horario,Tema,Subtema,Horario
+
 def testHorario():
-    HorarioModelo()
-    HorarioControlador()
+    Horario()
+
 def testMateria():
-    modelo=MateriaModelo()
+    modelo=Materia()
     modelo.recoverJson("temarios/7s/ai.json")
-    control=MateriaControlador("temarios/7s/ai.json")
     print(modelo)
-    # print(control)
-def testToJson():
-    modelo=MateriaControlador()
-    modelo.recoverJson("temarios/7s/ai.json")
-    print(modelo.toJson())
+
 def testModel():
-    testToJson()
-    
+    testMateria()

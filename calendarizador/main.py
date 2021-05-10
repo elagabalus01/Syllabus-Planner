@@ -1,20 +1,11 @@
 from os import listdir
 from os.path import isfile, join
-from calendarioFI.calendario import calendarioFI
-from connectCalendar import calendarizarJson,eliminarCaledarioCreados,generarCalendario
-def calendarizar(nombreCalendario,myPath,calendario):
-    files = [myPath+'/'+f for f in listdir(myPath) if isfile(join(myPath,f))]
-    for file in files:
-        calendarizarJson(nombreCalendario,file,calendario)
-def calendarizarRepasos():
-    nombre='Repasos 2020-1'
-    calendarizar(nombre,'./repaso5s',generarCalendario("5-8-2019",16))
-    # eliminarCaledarioCreados(nombre)
-def calendarizarClases(nombre,folder):
-    calendarizar(nombre,folder,calendarioFI())
-    # eliminarCaledarioCreados(nombre)
+from datetime import datetime
+from .calendarAdapter import calendarizar
 def main():
-    calendarizarClases('Clases 2020-2','C:/Users/ikaru/3D Objects/programming/python/temarios/')
+    current_date=datetime.now().strftime('%d-%m-%Y')
+    file_path='/home/elagabalus/archivos/programming/python/calendarizadorui/temarios/7s/ai.json'
+    calendarizar(file_path,'Prueba refactoring 2021',current_date,16)
 
 if __name__=='__main__':
     main()
