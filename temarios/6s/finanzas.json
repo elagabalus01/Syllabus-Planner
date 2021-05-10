@@ -1,0 +1,98 @@
+{
+    "nombre": " finanzas en la ingeniería en computación",
+    "salon": "h-265",
+    "color": 0,
+    "dias": [
+        1,
+        3
+    ],
+    "horas": [
+        11,
+        12
+    ],
+    "temas": [
+        {
+            "numero": 1,
+            "nombre": "Fundamentos de la economía en ingeniería en computación",
+            "duracion": 6.0,
+            "subtemas": [
+                "1.1 Finanzas.",
+                "1.2 Contabilidad.\r",
+                "1.3 Tipos de control en las finanzas.\r",
+                "1.4 Flujo de efectivo.",
+                "1.5 Procesos para la toma de decisiones",
+                "1.6 Valuación.\n1.6.1 Valor actual.\n1.6.2 Valor futuro.\n1.6.3 Anual equivalente.",
+                "1.7 Inflación",
+                "1.8 Depreciación.",
+                "1.9 Impuestos.",
+                "1.10 Valor del dinero en el tiempo.",
+                "1.11 Eficiencia",
+                "1.12 Eficacia.",
+                "1.13 Productividad."
+            ]
+        },
+        {
+            "numero": 2,
+            "nombre": "El ciclo de vida de la economía",
+            "duracion": 12.0,
+            "subtemas": [
+                "2.1 Producto.",
+                "2.2 Proyecto.\r",
+                "2.3 Programa.",
+                "2.4 Portafolio",
+                "2.5 Ciclo de vida del producto.",
+                "2.6 Ciclo de vida del proyecto.",
+                "2.7 Propuestas.",
+                "2.8 Decisiones de inversión.",
+                "2.9 Planeación.\r",
+                "2.10 Precio y costos.",
+                "2.11 Costo y costeo",
+                "2.12 Medidas de rendimiento.",
+                "2.13 Administración del valor obtenido.",
+                "2.14 Terminación de las decisiones.\r",
+                "2.15 Decisiones de reemplazo y retiro."
+            ]
+        },
+        {
+            "numero": 3,
+            "nombre": "Riesgo e incertidumbre",
+            "duracion": 12.0,
+            "subtemas": [
+                "3.1 Metas, estimados y planes.\n3.1.1 Concepto de mercado.\n3.1.2 Estudio de la oferta y la demanda.",
+                "3.2 Técnicas de estimación.\n3.2.1 Opinión de los expertos.\n3.2.2 Analogía.\n3.2.3 Descomposición.\n3.2.4 Métodos estadísticos (o paramétrica).\r",
+                "3.3 Direccionamiento de la incertidumbre.\n3.3.1 Considerar la estimación de rangos.\n3.3.2 Analizar la sensibilidad a los cambios de supuestos.\n3.3.3 Retrasar las decisiones finales.",
+                "3.4 Priorización",
+                "3.5 Decisiones bajo riesgo.",
+                "3.6 Decisiones bajo incertidumbre"
+            ]
+        },
+        {
+            "numero": 4,
+            "nombre": "Métodos para el análisis económico",
+            "duracion": 10.0,
+            "subtemas": [
+                "4.1 Análisis de decisiones con fines de lucro.",
+                "4.2 MARR.",
+                "4.3 ROI.",
+                "4.4 ROCE.",
+                "4.5 Análisis costo-beneficio",
+                "4.6 Análisis costo-efectividad.\r",
+                "4.7 Análisis de equilibrio.",
+                "4.8 Casos de negocio.",
+                "4.9 Evaluación de atributos múltiples.",
+                "4.10 Análisis de optimización."
+            ]
+        },
+        {
+            "numero": 5,
+            "nombre": "Consideraciones prácticas ",
+            "duracion": 8.0,
+            "subtemas": [
+                "5.1 El principio de lo bueno es suficiente",
+                "5.2 Economía libre de ficción.",
+                "5.3 Ecosistemas.",
+                "5.4 Offshoring y outsourcing"
+            ]
+        }
+    ]
+}

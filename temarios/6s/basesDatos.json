@@ -1,0 +1,83 @@
+{
+    "materia": "Bases De Datos",
+    "salon": "h265",
+    "color": "1",
+    "dias": [
+        1,
+        2
+    ],
+    "horas": [
+        1,
+        2
+    ],
+    "temas": {
+        "1": {
+            "nombre": "Introducción a las bases de datos",
+            "horas": 6.0,
+            "subtemas": [
+                "1.1 Sistemas de archivos y modelos de información.1.1.1 Seguridad de la información.",
+                "1.2 Definición de una base de datos.\r",
+                "1.3 Características de las bases de datos.1.3.1 Integridad.1.3.2 Redundancia.1.3.3 Consistencia.\r",
+                "1.4 Ventajas y desventajas",
+                "1.5 Conceptos de un sistema manejador de bases de datos.1.5.1 Arquitectura de tres capas ANSI.1.5.2 Propiedades ACID.1.5.3 Concurrencia.1.5.4 Seguridad.1.5.5 Lenguaje de definición de datos.1.5.6 Lenguaje de manipulación de datos.1.5.7 Lenguaje de control de datos.1.5.8 Administración de la base de datos.1.5.9 Definición y características del diccionario de datos.",
+                "1.6 Modelos de datos.1.6.1 Características de un modelo de datos.1.6.2 Modelo jerárquico.1.6.3 Modelo de red.1.6.4 Modelo orientado a objetos.1.6.5 Modelo entidad-relación.1.6.6 Modelo relacional.\r"
+            ]
+        },
+        "2": {
+            "nombre": "Modelo relacional",
+            "horas": 12.0,
+            "subtemas": [
+                "2.1 Lenguaje de definición de datos.2.1.1 Integridad de dominio.2.1.2 Integridad referencial.2.1.3 Integridad de valores y reglas de negocio.",
+                "2.2 Lenguajes de consulta de datos.2.2.1 Álgebra relacional.2.2.2 Introducción a SQL.\r"
+            ]
+        },
+        "3": {
+            "nombre": "Análisis de requerimientos y diseño conceptual",
+            "horas": 18.0,
+            "subtemas": []
+        },
+        "4": {
+            "nombre": "Diseño lógico",
+            "horas": 18.0,
+            "subtemas": [
+                "4.1 Generación de modelo relacional.",
+                "4.2 Dependencias funcionales.\r",
+                "4.3 Normalización.4.3.1 Anomalías de base de datos.4.3.2 Primera forma normal (1FN)4.3.3 Segunda forma normal (2FN).4.3.4 Tercera forma normal (3FN).4.3.5 Cuarta forma normal (4FN).4.3.6 Forma normal Boyce Codd (FNBC).4.3.7 Quinta forma normal (5FN)."
+            ]
+        },
+        "5": {
+            "nombre": "Diseño físico",
+            "horas": 12.0,
+            "subtemas": [
+                "5.1 Lenguaje de definición de datos.5.1.1 Creación de objetos de bases de datos.",
+                "5.2 Lenguaje de manipulación de datos.5.2.1 Altas, bajas y cambios en bases de datos.5.2.2 Consultas y subconsultas.5.2.3 Tipos de joins.5.2.4 Ordenamientos, agrupaciones, existencia, negación.5.2.5 Funciones agregadas.\r",
+                "5.3 Lenguaje de control de datos.5.3.1 Creación y administración de usuarios y perfiles de permisos.",
+                "5.4 Consultas en lenguaje procedural.\n\t5.4.1 Sentencias de control de flujo.\n\t5.4.2 Procedimientos.\n\t5.4.3 Cursores.\n\t5.4.4 Disparadores.\n\t5.4.5 Vistas.",
+                "5.5 Extensiones al SQL (objetos, XML, etc.)"
+            ]
+        },
+        "6": {
+            "nombre": "Organización física de la base de datos ",
+            "horas": 18.0,
+            "subtemas": [
+                "6.1 Archivos indexados.",
+                "6.2 Archivos con dispersión",
+                "6.3 Archivos de autentificación.",
+                "6.4 Árboles B."
+            ]
+        },
+        "7": {
+            "nombre": "Temas complementarios de base de datos",
+            "horas": 12.0,
+            "subtemas": [
+                "7.1 Administración de la base de datos (respaldo y recuperación de bases de datos).",
+                "7.2 Optimización de consultas y evaluación de costos.",
+                "7.3 Bases de datos distribuidas.",
+                "7.4 Bases de datos orientadas a objetos.",
+                "7.5 Bases de datos móviles.",
+                "7.6 Bases de datos XML.",
+                "7.7 Aplicaciones avanzadas (depósitos de datos, minería de datos, internet, etc.)."
+            ]
+        }
+    }
+}

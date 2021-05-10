@@ -1,0 +1,66 @@
+{
+    "materia": " introducción al análisis económico empresarial",
+    "salon": "h216",
+    "color": 1,
+    "horarios": [],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Introducción",
+            "duracion": 2.0,
+            "subtemas": [
+                "1.1 La empresa y el ingeniero.\r",
+                "1.2 Análisis económico para la empresa.\r"
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "La empresa",
+            "duracion": 12.0,
+            "subtemas": [
+                "2.1 Concepto de empresa.",
+                "2.2 Constitución de la empresa.\r",
+                "2.3 Aspectos jurídicos.\r",
+                "2.4 Estructura financiera.\r",
+                "2.5 Planeación operativa.\r",
+                "2.6 Evolución del funcionamiento.\r"
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "Estructuras del mercado",
+            "duracion": 8.0,
+            "subtemas": [
+                "3.1 Tipo de mercado.\r",
+                "3.2 Comportamiento del consumidor.\r",
+                "3.3 La oferta.\r",
+                "3.4 Elasticidad de oferta y demanda.\r",
+                "3.5 Equilibrio de mercado.\r"
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "El empresario y el gobierno",
+            "duracion": 4.0,
+            "subtemas": [
+                "4.1 La situación empresarial en México.\r",
+                "4.2 Ámbitos de gobierno.\r",
+                "4.3 Política fiscal.\r",
+                "4.4 Política monetaria.\r",
+                "4.5 Regulación oficial.\r"
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "El futuro de la empresa",
+            "duracion": 6.0,
+            "subtemas": [
+                "v5.1 El cambio tecnológico y la empresa.\r",
+                "5.2 Planeación estratégica.\r",
+                "5.3 Técnicas cualitativas y cuantitativas para la toma de decisiones.\r",
+                "5.4 Estrategias de expansión.\r",
+                "5.5 Importancia de la ingeniería en el desarrollo empresarial del país.\r"
+            ]
+        }
+    ]
+}
