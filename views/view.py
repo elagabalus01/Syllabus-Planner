@@ -23,7 +23,7 @@ class View(Tk):
 
         self.formHorarios=FormularioHorarios(self,"Horarios")
         self.formHorarios.grid(row=1,column=0,columnspan=2,sticky='news')
-    
+
         self.formTemas=FormularioTemas(self,"Temas")
         self.formTemas.grid(row=2,column=0,rowspan=2,sticky='news')
 
@@ -50,7 +50,7 @@ class EditWindow(Tk):
         self.entrada=scrolledtext.ScrolledText(editFrame,undo=True,width=50,height=9,wrap='none')
         self.entrada.grid(column=0, sticky="nsew")
         # editEntry.insert(END,elemento)
-        
+
         self.grid_columnconfigure(0, weight=1)
         editFrame.grid_columnconfigure(0,weight=1)
 
@@ -66,7 +66,7 @@ def main():
     app.title("Temario")
     app.geometry("546x440+480+150")
     app.mainloop()
-    
+
 # def main():
 #     app=EditWindow()
 #     app.mainloop()

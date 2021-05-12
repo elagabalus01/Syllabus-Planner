@@ -57,7 +57,7 @@ class MainController(CalendarizadorController):
         ''' PRUEBAS '''
     def configurarComandos(self):
         self.view.guardar.configure(command=self.guardar)
-        
+
         self.view.formHorarios.agregarHorario.configure(command=self.agregarHorario)
 
         self.view.formTemas.eliminar.configure(command=self.eliminarTema)
@@ -93,7 +93,7 @@ class MainController(CalendarizadorController):
         self.view.formDatos.color.configure(validatecommand=None)
         self.view.formTemas.numero.configure(validatecommand=None)
         self.view.formTemas.duracion.configure(validatecommand=None)
-    
+
     def abrir(self,event=None):
         try:
             ftypes = [('json files', '*.json'), ('All files', '*')]
@@ -110,7 +110,7 @@ class MainController(CalendarizadorController):
             print("Se canceló")
         # except:
         #     messagebox.showinfo(title="Error", message="No se pudo abrir el archivo")
-   
+
     def guardar(self,event=None):
         self.readForm()
         if self.file:
@@ -134,7 +134,7 @@ class MainController(CalendarizadorController):
         except AttributeError:
             messagebox.showinfo(title="Error", message="No se pudo guardar el archivo")
             print("No se selecciono nombre para el archivo")
-    
+
     def cerrar(self,event=None) :
         self.model=Materia()
         self.view.title('Nuevo')
@@ -156,7 +156,7 @@ class MainController(CalendarizadorController):
         self.view.formDatos.materia.insert(0,self.model.materia)
         self.view.formDatos.salon.insert(0,self.model.salon)
         self.view.formDatos.color.insert(0,self.model.color)
-    
+
     def readForm(self):
         try:
             self.model.materia=limpiarCadena(self.view.formDatos.materia.get())
@@ -175,14 +175,15 @@ class MainController(CalendarizadorController):
         except Exception as e:
             print(e)
             messagebox.showinfo(title="Prueba", message="Es necesario escribir el nombre de la materia")
-    
+
     def vaciarFomrulario(self):
         self.view.formDatos.materia.delete(0,END)
         self.view.formDatos.salon.delete(0,END)
         self.view.formDatos.color.delete(0,END)
-    
+
     ''' CONTRUYENTO HORARIOS '''
     def readHorario(self):
+        
         listaHorarios=[dia2Str(horario.dia) for horario in self.model.horarios]
         # Leyendo el nuevo horario
         dia=self.view.formHorarios.dia.get().title()
@@ -206,7 +207,7 @@ class MainController(CalendarizadorController):
         self.view.formHorarios.dia.delete(0,END)
         self.view.formHorarios.horaInicio.delete(0,END)
         self.view.formHorarios.horaFin.delete(0,END)
-    
+
     def agregarHorario(self,event=None):
         self.readHorario()
         self.vaciarHorario()
@@ -217,7 +218,7 @@ class MainController(CalendarizadorController):
             if horario.dia==num_dia:
                 dia_nombre=dia2Str(horario.dia)
                 self.view.formHorarios.currentHorario.set(dia_nombre)
-                
+
                 self.view.formHorarios.dia.delete(0,END)
                 self.view.formHorarios.dia.insert(0,dia_nombre)
 
@@ -226,7 +227,7 @@ class MainController(CalendarizadorController):
 
                 self.view.formHorarios.horaFin.delete(0,END)
                 self.view.formHorarios.horaFin.insert(0,horario.horaFin)
-    
+
     def updateHorarios(self):
         listaHorarios=[dia2Str(horario.dia) for horario in self.model.horarios]
         self.view.formHorarios.horarios["menu"].delete(0, "end")
@@ -255,7 +256,7 @@ class MainController(CalendarizadorController):
                 print(tema.subtemas)
                 for subtema in tema.subtemas:
                     self.view.formTemas.subtemas.insert(END,subtema.nombre)
-    
+
     def readTema(self):
         listaTemas=[tema.numero for tema in self.model.temas]
         try:
@@ -290,7 +291,7 @@ class MainController(CalendarizadorController):
                 messagebox.showinfo(title="Prueba", message="Aún no se define la duracion")
         except ValueError as e:
             messagebox.showinfo(title="Prueba", message="Aún no se define el numero del tema")
-    
+
     def agregarTema(self,event=None):
         self.readTema()
         self.vaciarTema()
@@ -302,7 +303,7 @@ class MainController(CalendarizadorController):
         self.view.formTemas.currentTema.set('--')
         for string in listaTemas:
             self.view.formTemas.temas["menu"].add_command(label=string,command=lambda value=string: self.setTema(value))
-    
+
     def agregarSubtema(self,x):
         self.view.formTemas.subtemas.insert(END,self.view.formTemas.entradaSubtema.get())
         self.view.formTemas.entradaSubtema.delete(0,END)
@@ -314,7 +315,7 @@ class MainController(CalendarizadorController):
         self.view.formTemas.duracion.delete(0,END)
         self.view.formTemas.titulo.delete(0,END)
         self.view.formTemas.subtemas.delete(0,END)
-    
+
     def eliminarSubtema(self,x):
         posicion=self.view.formTemas.subtemas.curselection()[0]
         self.view.formTemas.subtemas.delete(posicion)
@@ -331,7 +332,7 @@ class MainController(CalendarizadorController):
             ventanaEdicion.destroy()
         ventanaEdicion.aceptar.configure(command=aceptarEdicionSubtema)
 
-    
+
     def eliminarTema(self):
         try:
             numero=int(self.view.formTemas.numero.get())
@@ -343,7 +344,7 @@ class MainController(CalendarizadorController):
         except ValueError:
             print("No se selecciono un tema")
         self.vaciarTema()
-    
+
     def run(self):
         self.view.mainloop()
 def main():
