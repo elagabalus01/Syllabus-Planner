@@ -1,7 +1,7 @@
 from re import findall
 from datetime import time
 class Horario(object):
-    def __init__(self,num_dia,horaInicio,horaFin):
+    def __init__(self,num_dia:int,horaInicio,horaFin):
         self.dia=num_dia
         str2time=lambda hora:time(int(hora.split(":")[0]),int(hora.split(":")[1]))
         self.horaInicio=str2time(horaInicio)
