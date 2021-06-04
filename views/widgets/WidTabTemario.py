@@ -1,26 +1,37 @@
-from .utils import dias,dia2Num, dia2Str
+from .ui_tab_temario import Ui_tab_temario
+from PyQt5 import QtWidgets
 from PyQt5.QtCore import QTime
-# dias=["lu","ma","mi","ma","ju","vi","sa"]
-# dia2Str=lambda numDia: dias[numDia].title()
-# dia2Num=lambda dia:dias.index(dia.lower())
-class FormController:
-    def form_bind_signals(self):
+from controllers.utils import dias,dia2Num, dia2Str
+import uuid
+class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
+    def __init__(self,parent=None):
+        super().__init__(parent)
+        self.setupUi(self)
+        self.set_catalog()
+        self.bind_signals()
+        self.id=str(uuid.uuid4())
+        self.model=None
+
+    def set_model(self,model):
+        self.model=model
+
+
+    def set_catalog(self):
+        self.color_box.addItems(["Rojo","Verde","Azul","Amarillo"])
+        self.dia_box.addItems(["Lu","Ma","Mi","Ju","Vi","Sa"])
+
+    def bind_signals(self):
         self.horario_box.currentIndexChanged.connect(self.set_current_horario)
         self.tema_box.currentIndexChanged.connect(self.set_current_tema)
 
     def set_form(self):
-        self.form_bind_signals()
-
         self.materia_in.insert(self.model.materia)
         self.materia_in.setCursorPosition(0)
         self.materia_in.setToolTip(self.model.materia)
-        print(self.materia_in.toolTip)
         self.salon_in.insert(self.model.salon)
         # self.color_in.setCurrentText(self.model.color)
-
         self.color_box.setCurrentIndex(self.model.color)
         i=0
-        print(self.model.horarios)
         for horario in self.model.horarios:
             self.horario_box.insertItem(i,dia2Str(horario.dia))
             i=i+1

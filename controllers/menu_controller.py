@@ -1,4 +1,3 @@
-from PyQt5 import *
 
 class MenuController:
     def set_menu_controller(self):
