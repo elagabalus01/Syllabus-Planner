@@ -42,14 +42,25 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
         self.set_current_tema(0)
 
     def set_current_horario(self,index):
-        current_horario=self.model.horarios[index]
+        try:
+            current_horario=self.model.horarios[index]
+        except IndexError:
+            if index!=0:
+                print("ERROR")
+            return
         self.dia_box.setCurrentIndex(current_horario.dia)
         self.hora_inicio_in.setTime(QTime(current_horario.horaInicio))
         self.hora_fin_in.setTime(QTime(current_horario.horaFin))
 
     def set_current_tema(self,index):
         print(f"Current tema changed?{index}")
-        current_tema=self.model.temas[index]
+        try:
+            current_tema=self.model.temas[index]
+        except IndexError:
+            if index!=0:
+                print("Error")
+            return
+
         self.subtemas_list.clear()
         self.nombre_tema_in.clear()
         self.num_tema_in.setValue(current_tema.numero)
@@ -60,7 +71,7 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
         self.subtemas_list.addItems(subtemas)
 
     def agregar_horario(self):
-        
+
         pass
 
     def clear_form(self):

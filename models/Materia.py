@@ -9,9 +9,10 @@ except (ModuleNotFoundError,ImportError):
     from Tema import Tema
     from Subtema import Subtema
     from Horario import Horario
+
 class Materia(object):
     # dicDias={"Lu":0,"Ma":1,"Mi":2,"Ju":3,"Vi":4,"Sa":5,"Do":6} En des huso
-    
+
     # Constructor
     def __init__(self):
         self.materia = None
@@ -19,9 +20,11 @@ class Materia(object):
         self.color=None
         self.horarios = []
         self.temas = []
+        self.file=None
 
     # Se abre un archivo json
     def recoverJson(self,jsonFile):
+        self.file=jsonFile
         with open(jsonFile,'r',encoding="utf-8") as file:
             dic=json.load(file)
             self.materia=dic["materia"]
@@ -49,6 +52,10 @@ class Materia(object):
             self.temas=temas
         self.duracionPromedio=0
 
+    def write(self):
+        with open(self.file,'w',encoding="utf-8") as file:
+            file.write(self.toJson())
+
     def toJson(self):
         self.temas.sort(key=lambda x:x.numero )
         return json.dumps(self,default=json_decoder,indent=4,ensure_ascii=False)
@@ -70,14 +77,16 @@ class Materia(object):
         return self.temas
     def getColor(self):
         return self.color
-    ''' Método string '''
+
     def __str__(self):
+        ''' Método string '''
         aux=""
         for tema in self.temas:
             aux+=str(tema)+'\n'
         return aux
-    ''' ordenar En Calendario calendario es el calendario completo '''
+
     def ordenarEnCalendario(self,calendario):
+        ''' ordenar En Calendario calendario es el calendario completo '''
         for i in self.horarios:
             self.duracionPromedio+=(datetime.combine(date.min,i.getHoraFin())-datetime.combine(date.min,i.getHoraInicio())).seconds/3600
         try:
@@ -106,8 +115,8 @@ class Materia(object):
             print(f"El tema {tema.getNombre()} no de podra tomar")
             self.temas.remove(tema)
 
-    ''' imprimir objeto completo '''
     def printFullObject(self):
+        ''' imprimir objeto completo '''
         print(f"{self.materia} en el salon {self.salon}")
         for horario in self.horarios:
             print(horario)

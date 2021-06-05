@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>898</width>
+    <width>900</width>
     <height>503</height>
    </rect>
   </property>
@@ -42,24 +42,11 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>882</width>
+        <width>884</width>
         <height>566</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="3" column="5">
-        <widget class="QTimeEdit" name="hora_inicio_in">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="displayFormat">
-          <string>HH:mm</string>
-         </property>
-        </widget>
-       </item>
        <item row="7" column="0" colspan="11">
         <widget class="QListWidget" name="subtemas_list">
          <property name="minimumSize">
@@ -70,105 +57,8 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="0" colspan="5">
-        <widget class="QLineEdit" name="lineEdit_4">
-         <property name="inputMask">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="placeholderText">
-          <string>Subtema</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="4">
-        <widget class="QLabel" name="nombre_tema_label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Nombre</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="horario_box">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="tema_box"/>
-       </item>
-       <item row="0" column="10">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLabel" name="salon_label">
-         <property name="text">
-          <string>Salón</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="dia_label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Dia</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" colspan="3">
-        <widget class="QLineEdit" name="materia_in"/>
-       </item>
-       <item row="5" column="1">
-        <widget class="QSpinBox" name="num_tema_in"/>
-       </item>
-       <item row="3" column="4">
-        <widget class="QLabel" name="hora_inicio_label">
-         <property name="text">
-          <string>Hora inicio</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="horario_label">
+       <item row="3" column="10">
+        <widget class="QPushButton" name="btn_eliminar_horario">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -176,26 +66,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Horario</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="5" colspan="5">
-        <widget class="QLineEdit" name="nombre_tema_in"/>
-       </item>
-       <item row="5" column="3">
-        <widget class="QSpinBox" name="duracion_tema_in"/>
-       </item>
-       <item row="0" column="8">
-        <widget class="QLabel" name="color_label">
-         <property name="text">
-          <string>Color</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <string>Eliminar</string>
          </property>
         </widget>
        </item>
@@ -206,13 +77,19 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="9">
-        <widget class="QComboBox" name="color_box"/>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="tema_box"/>
        </item>
-       <item row="8" column="9">
-        <widget class="QPushButton" name="pushButton">
+       <item row="5" column="2">
+        <widget class="QLabel" name="duracion_tema_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>PushButton</string>
+          <string>Duracion</string>
          </property>
         </widget>
        </item>
@@ -232,6 +109,55 @@
          </property>
         </widget>
        </item>
+       <item row="3" column="8">
+        <widget class="QTimeEdit" name="hora_fin_in">
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="displayFormat">
+          <string>HH:mm</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="salon_label">
+         <property name="text">
+          <string>Salón</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="6">
+        <widget class="QLineEdit" name="lineEdit_4">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Subtema</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QTimeEdit" name="hora_inicio_in">
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="displayFormat">
+          <string>HH:mm</string>
+         </property>
+        </widget>
+       </item>
        <item row="4" column="0">
         <widget class="QLabel" name="tema_label">
          <property name="sizePolicy">
@@ -245,6 +171,9 @@
          </property>
         </widget>
        </item>
+       <item row="5" column="1">
+        <widget class="QSpinBox" name="num_tema_in"/>
+       </item>
        <item row="3" column="3">
         <widget class="QComboBox" name="dia_box">
          <property name="sizePolicy">
@@ -255,43 +184,17 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="duracion_tema_label">
+       <item row="3" column="1">
+        <widget class="QComboBox" name="horario_box">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="text">
-          <string>Duracion</string>
-         </property>
         </widget>
        </item>
-       <item row="0" column="5" colspan="2">
-        <widget class="QLineEdit" name="salon_in">
-         <property name="maximumSize">
-          <size>
-           <width>250</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="9">
-        <widget class="QTimeEdit" name="hora_fin_in">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="displayFormat">
-          <string>HH:mm</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="8">
+       <item row="3" column="7">
         <widget class="QLabel" name="hora_fin_label">
          <property name="text">
           <string>Hora fin</string>
@@ -301,8 +204,76 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="10">
-        <widget class="QPushButton" name="pushButton_2">
+       <item row="0" column="9" colspan="2">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="3">
+        <widget class="QSpinBox" name="duracion_tema_in"/>
+       </item>
+       <item row="0" column="8">
+        <widget class="QComboBox" name="color_box"/>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLabel" name="hora_inicio_label">
+         <property name="text">
+          <string>Hora inicio</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5" colspan="2">
+        <widget class="QLineEdit" name="salon_in">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="9">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="horario_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Horario</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="9">
+        <widget class="QPushButton" name="btn_agregar_horario">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -316,6 +287,54 @@
           <string>Agregar</string>
          </property>
         </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="dia_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Dia</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="4">
+        <widget class="QLabel" name="nombre_tema_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Nombre</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="3">
+        <widget class="QLineEdit" name="materia_in"/>
+       </item>
+       <item row="0" column="7">
+        <widget class="QLabel" name="color_label">
+         <property name="text">
+          <string>Color</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="5" colspan="5">
+        <widget class="QLineEdit" name="nombre_tema_in"/>
        </item>
       </layout>
      </widget>

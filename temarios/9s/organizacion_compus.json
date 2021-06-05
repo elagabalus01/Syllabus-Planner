@@ -2,7 +2,13 @@
     "materia": " organización y arquitectura de computadoras",
     "salon": "H265",
     "color": 1,
-    "horarios": [],
+    "horarios": [
+        {
+            "dia": 0,
+            "horaInicio": "09:00",
+            "horaFin": "10:00"
+        }
+    ],
     "temas": [
         {
             "numero": 1,

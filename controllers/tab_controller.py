@@ -1,4 +1,5 @@
 from models import Materia
+from .tab_temario_controller import TabTemarioController
 class TabController():
     def __init__(self):
         # [(WidTabTemario,Materia)]
@@ -8,12 +9,13 @@ class TabController():
         model.recoverJson(file)
         new_WidTabTemario.set_model(model)
         new_WidTabTemario.set_form()
-        self.tabs.append((new_WidTabTemario,model))
+        ctrl=TabTemarioController(new_WidTabTemario,model)
+        self.tabs.append(ctrl)
 
     def find_widget_index(self,id)->int:
         i=0
         for tab in self.tabs:
-            if tab[0].id==id:
+            if tab.view.id==id:
                 return i
             else:
                 i=i+1

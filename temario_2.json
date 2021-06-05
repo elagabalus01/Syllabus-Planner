@@ -4,9 +4,9 @@
     "color": 1,
     "horarios": [
         {
-            "horaInicio": "15:00",
-            "horaFin": "14:00",
-            "dia": 2
+            "dia": 0,
+            "horaInicio": "07:00",
+            "horaFin": "08:00"
         }
     ],
     "temas": [
