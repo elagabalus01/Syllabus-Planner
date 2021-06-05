@@ -41,10 +41,12 @@ class MainController(QMainWindow,Ui_MainWindow,MenuController):
         # self.set_form()
 
     def cerrar(self):
-        if self.file_name:
-            self.file_name=None
-            self.clear_form()
-            print("Cerrando")
+        if self.tab_widget.count()>0:
+            self.close_tab(self.tab_widget.currentIndex())
+        # if self.file_name:
+        #     self.file_name=None
+        #     self.clear_form()
+        #     print("Cerrando")
 
 
     def salir(self):

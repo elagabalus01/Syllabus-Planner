@@ -15,7 +15,6 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
     def set_model(self,model):
         self.model=model
 
-
     def set_catalog(self):
         self.color_box.addItems(["Rojo","Verde","Azul","Amarillo"])
         self.dia_box.addItems(["Lu","Ma","Mi","Ju","Vi","Sa"])
@@ -59,6 +58,10 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
         self.nombre_tema_in.setCursorPosition(0)
         subtemas=[subtema.nombre for subtema in current_tema.subtemas]
         self.subtemas_list.addItems(subtemas)
+
+    def agregar_horario(self):
+        
+        pass
 
     def clear_form(self):
         self.clear_header()
