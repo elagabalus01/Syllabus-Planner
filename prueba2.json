@@ -1,0 +1,14 @@
+{
+    "materia": null,
+    "salon": null,
+    "color": null,
+    "horarios": [],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Prueba",
+            "duracion": 32,
+            "subtemas": []
+        }
+    ]
+}

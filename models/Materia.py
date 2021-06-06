@@ -56,6 +56,12 @@ class Materia(object):
         with open(self.file,'w',encoding="utf-8") as file:
             file.write(self.toJson())
 
+    def delete_tema(self,id):
+        for tema in self.temas:
+            if tema.numero==id:
+                self.temas.remove(tema)
+
+
     def toJson(self):
         self.temas.sort(key=lambda x:x.numero )
         return json.dumps(self,default=json_decoder,indent=4,ensure_ascii=False)

@@ -133,7 +133,7 @@
         </widget>
        </item>
        <item row="6" column="0" colspan="6">
-        <widget class="QLineEdit" name="lineEdit_4">
+        <widget class="QLineEdit" name="subtema_in">
          <property name="inputMask">
           <string/>
          </property>
@@ -335,6 +335,20 @@
        </item>
        <item row="5" column="5" colspan="5">
         <widget class="QLineEdit" name="nombre_tema_in"/>
+       </item>
+       <item row="4" column="3">
+        <widget class="QPushButton" name="btn_agregar_tema">
+         <property name="text">
+          <string>Agregar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="5">
+        <widget class="QPushButton" name="btn_eliminar_tema">
+         <property name="text">
+          <string>Eliminar</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

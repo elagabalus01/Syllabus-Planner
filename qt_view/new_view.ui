@@ -77,11 +77,23 @@
     <property name="title">
      <string>Archivo</string>
     </property>
+    <addaction name="actionNuevo"/>
     <addaction name="actionAbrir"/>
+    <addaction name="actionGuardar"/>
+    <addaction name="actionGuardar_como"/>
     <addaction name="actionCerrar"/>
     <addaction name="actionSalir"/>
    </widget>
+   <widget class="QMenu" name="menuCalenzadizador">
+    <property name="title">
+     <string>Calenzadizador</string>
+    </property>
+    <addaction name="actionCalendarizar"/>
+    <addaction name="actionCalendarizar_todo"/>
+    <addaction name="actionAgregar_calendario_comming"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuCalenzadizador"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -106,6 +118,45 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionCalendarizar">
+   <property name="text">
+    <string>Calendarizar</string>
+   </property>
+  </action>
+  <action name="actionAgregar_calendario_comming">
+   <property name="text">
+    <string>Agregar calendario (comming)</string>
+   </property>
+  </action>
+  <action name="actionCalendarizar_todo">
+   <property name="text">
+    <string>Calendarizar todo</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionGuardar_como">
+   <property name="text">
+    <string>Guardar como</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
  </widget>

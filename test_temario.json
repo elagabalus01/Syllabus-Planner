@@ -4,26 +4,12 @@
     "color": 1,
     "horarios": [
         {
+            "dia": 2,
             "horaInicio": "15:00",
-            "horaFin": "14:00",
-            "dia": 2
+            "horaFin": "14:00"
         }
     ],
     "temas": [
-        {
-            "numero": 1,
-            "tema": "Software embebido",
-            "duracion": 6.0,
-            "subtemas": [
-                "1.1 Aplicación embebida.\r",
-                "1.2 Memoria en sistemas embebidos, arquitecturas.\r",
-                "1.3 El software en el diseño del hardware.\r",
-                "1.4 Migrando el software a una nueva arquitectura de procesador.\r",
-                "1.5 Como seleccionar un CPU para el diseño de un sistema embebido.\r",
-                "1.6 Introducción al software para USB.\r",
-                "1.7 USB 3.0.\r"
-            ]
-        },
         {
             "numero": 2,
             "tema": "Diseño y desarrollo de software embebido",

@@ -23,7 +23,6 @@ class TabTemarioController(QObject):
         del self.model.horarios[index]
         self.model.write()
 
-
     @pyqtSlot()
     def agregar_horario(self):
         print("Agregando horario")
