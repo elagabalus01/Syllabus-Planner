@@ -57,9 +57,26 @@ class Materia(object):
             file.write(self.toJson())
 
     def delete_tema(self,id):
+        tema=self.getTemaById(id)
+        if tema:
+            self.temas.remove(tema)
+
+    def getTemaById(self,id):
         for tema in self.temas:
             if tema.numero==id:
-                self.temas.remove(tema)
+                return tema
+        return False
+
+    def agregar_tema(self,nuevo_tema):
+        ''' Si encuentra un tema con el mismo id regresa falso
+        pero debería actualizar el tema
+        si logra insertarlo regresa verdadero
+        '''
+        for tema in self.temas:
+            if nuevo_tema.numero == tema.numero:
+                return False
+        self.temas.append(nuevo_tema)
+        return True
 
 
     def toJson(self):

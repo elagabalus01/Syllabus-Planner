@@ -1,4 +1,4 @@
-from models import Tema
+from models import Tema,Subtema
 from views.widgets.SubtemaDialog import SubtemaDialog
 from PyQt5 import QtCore,QtWidgets,QtGui
 
@@ -34,20 +34,26 @@ class TemaController():
         self.view.btn_eliminar_tema.pressed.connect(self.eliminar_tema)
         self.view.subtema_in.returnPressed.connect(self.agregar_subtema)
         self.view.subtemas_list.itemDoubleClicked.connect(self.editar_subtema)
+        self.view.tema_box.currentIndexChanged.connect(self.set_current_tema)
+
 
     def agregar_tema(self):
-
         new_tema=Tema()
         num_tema=self.view.num_tema_in.value()
         new_tema.numero=num_tema
         new_tema.tema=self.view.nombre_tema_in.text()
         new_tema.duracion=self.view.duracion_tema_in.value()
         new_tema.subtemas=[] #PROVICIONAL
-
-        self.model.temas.append(new_tema)
         new_index=self.view.tema_box.count()
-        self.view.tema_box.insertItem(new_index,str(num_tema))
 
+        if self.model.agregar_tema(new_tema):
+            # Agrega el id a la lista de temas si no estaba agregado
+            self.view.tema_box.insertItem(new_index,str(num_tema))
+            print("Agregando tema")
+        else:
+            print("ya existía el tema tema")
+        self.agregar_subtemas()
+        print(new_tema)
         self.model.write()
 
     def eliminar_tema(self):
@@ -62,8 +68,45 @@ class TemaController():
         subtema=self.view.subtema_in.text()
         self.view.subtema_in.clear()
         self.view.subtemas_list.addItem(subtema)
+        self.agregar_subtemas()
+
+    def agregar_subtemas(self):
+        print("Agregando todos los subtemas")
+        subtemas=[]
+        for i in range(self.view.subtemas_list.count()):
+            nuevo_subtema=Subtema(self.view.subtemas_list.item(i).text())
+            subtemas.append(nuevo_subtema)
+        id=int(self.view.tema_box.currentText())
+        try:
+            current_tema=self.model.getTemaById(id)
+            current_tema.subtemas=subtemas
+        except IndexError:
+            if index!=0:
+                print("Error al leer el tema actual para agregar subtemas")
+            return
+        self.model.write()
+
 
     def editar_subtema(self,subtema:str):
         print(subtema.text())
         dialog=SubtemaDialog(self.view)
         dialog.exec()
+
+    def set_current_tema(self,index):
+        print(f"Current tema changed?{index}")
+        id=int(self.view.tema_box.currentText())
+        try:
+            current_tema=self.model.getTemaById(id)
+        except IndexError:
+            if index!=0:
+                print("Error")
+            return
+
+        self.view.subtemas_list.clear()
+        self.view.nombre_tema_in.clear()
+        self.view.num_tema_in.setValue(current_tema.numero)
+        self.view.duracion_tema_in.setValue(current_tema.duracion)
+        self.view.nombre_tema_in.insert(current_tema.tema)
+        self.view.nombre_tema_in.setCursorPosition(0)
+        subtemas=[subtema.nombre for subtema in current_tema.subtemas]
+        self.view.subtemas_list.addItems(subtemas)

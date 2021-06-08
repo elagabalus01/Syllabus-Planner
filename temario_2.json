@@ -7,9 +7,28 @@
             "dia": 0,
             "horaInicio": "07:00",
             "horaFin": "08:00"
+        },
+        {
+            "dia": 2,
+            "horaInicio": "07:00",
+            "horaFin": "08:00"
         }
     ],
     "temas": [
+        {
+            "numero": 0,
+            "tema": "el o",
+            "duracion": 10,
+            "subtemas": [
+                "prueba"
+            ]
+        },
+        {
+            "numero": 1,
+            "tema": "el 1",
+            "duracion": 1,
+            "subtemas": []
+        },
         {
             "numero": 2,
             "tema": "Diseño y desarrollo de software embebido",
@@ -35,29 +54,6 @@
                 "3.4 Lenguaje C para sistemas embebidos.\r",
                 "3.5 Lenguaje C++ para sistemas embebidos.\r"
             ]
-        },
-        {
-            "numero": 4,
-            "tema": "Aplicaciones y sistemas operativos en tiempo real",
-            "duracion": 15.0,
-            "subtemas": [
-                "4.1 Sistemas de tiempo real.\r",
-                "4.2 Modelos de programación para sistemas embebidos de tiempo real.\r",
-                "4.3 Manejo de eventos en sistemas embebidos.\r",
-                "4.4 Programación para interrupciones.\r",
-                "4.5 Técnicas de depuración para sistemas en tiempo real.\r",
-                "4.6 Desarrollo de manejadores de dispositivos.\r",
-                "4.7 Tiempo vs. Prioridad.\r",
-                "4.8 Sistema de archivos para sistemas embebidos.\r",
-                "4.9 Sistemas operativos abiertos Linux Embebido y Android: Introducción, Arquitecturas y desarrollo.\r",
-                "4.10 Sistemas embebidos multicore.\r"
-            ]
-        },
-        {
-            "numero": 4,
-            "tema": "Aplicaciones y sistemas operativos en tiempo real",
-            "duracion": 15,
-            "subtemas": []
         }
     ]
 }
