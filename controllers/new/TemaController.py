@@ -20,8 +20,6 @@ class TemaController():
         self.view.subtemas_list.takeItem(index)
         print(self.view.subtemas_list.count())
         #DELETING FROM MODEL
-        
-
 
     def show_menu(self):
         print("SHOWING MENU")

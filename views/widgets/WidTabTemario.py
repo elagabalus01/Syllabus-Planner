@@ -1,7 +1,7 @@
 from .ui_tab_temario import Ui_tab_temario
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QTime
-from controllers.utils import dias,dia2Num, dia2Str
+from controllers.new.utils import dias,dia2Num, dia2Str
 import uuid
 class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
     def __init__(self,parent=None):
@@ -22,6 +22,7 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
     def bind_signals(self):
         self.horario_box.currentIndexChanged.connect(self.set_current_horario)
         self.tema_box.currentIndexChanged.connect(self.set_current_tema)
+        self.btn_guardar.pressed.connect(self.read_temario)
 
     def set_form(self):
         self.materia_in.insert(self.model.materia)
@@ -70,9 +71,12 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
         subtemas=[subtema.nombre for subtema in current_tema.subtemas]
         self.subtemas_list.addItems(subtemas)
 
-    def agregar_horario(self):
+    def read_temario(self):
+        self.model.materia=self.materia_in.text()
+        self.model.salon=self.salon_in.text()
+        self.model.color=self.color_box.currentIndex()
 
-        pass
+
 
     def clear_form(self):
         self.clear_header()

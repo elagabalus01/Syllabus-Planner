@@ -1,0 +1,142 @@
+{
+    "materia": "Redes de datos seguras",
+    "salon": "VIRTUAL",
+    "color": 0,
+    "horarios": [
+        {
+            "dia": 1,
+            "horaInicio": "11:00",
+            "horaFin": "13:00"
+        },
+        {
+            "dia": 2,
+            "horaInicio": "11:00",
+            "horaFin": "13:00"
+        },
+        {
+            "dia": 4,
+            "horaInicio": "11:00",
+            "horaFin": "13:00"
+        }
+    ],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Conceptos básicos",
+            "duracion": 6.0,
+            "subtemas": [
+                "1.1 Redes de comunicaciones de datos. Panorama general",
+                "1.2 Beneficios de las redes locales. Usos y aplicaciones",
+                "1.3 Topologías. Importante consideración de diseño.\n1.3.1 Estrella.\n1.3.2 Árbol.\n1.3.3 Anillo.\n1.3.4 Bus.\n1.3.5 Malla.\n1.3.6 Híbridas.",
+                "1.4 Evolución de las redes de datos. Principales características: cobertura geográfica, velocidad, control\nde errores, enlaces, historia ALOHA y X.25.\n1.4.1 LAN.\n1.4.2 MAN.\n1.4.3 PAN.\n1.4.4 WAN.\n1.4.5 VLAN.",
+                "1.5 Fundamentos de seguridad.\n1.5.1 Conceptos generales."
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "Estándares y arquitecturas",
+            "duracion": 6.0,
+            "subtemas": [
+                "2.1 Organismos de estandarización. Objetivos, miembros, grupos de trabajo, organismos, etc.\n2.1.1 ISO.\n2.1.2 IEEE.\n2.1.3 NOM.\n2.1.4 TIA.\n2.1.5 EIA.\n2.1.6 ANSI.\n2.1.7 ITU.\n2.1.8 BROADBAND FORUM",
+                "2.2 Modelo OSI de acuerdo al estándar 7498-1.\n2.2.1 Definición de sistemas abiertos.\n2.2.2 Capas del modelo OSI.",
+                "2.3 Arquitectura de seguridad de OSI estándar 7498-2.\n2.3.1 Servicios de seguridad.\n2.3.2 Mecanismos de seguridad",
+                "2.4 Modelo TCP/IP.\n2.4.1 Capas del modelo TCP/IP.\n2.4.2 Capa física o hardware.\n2.4.3 Capa de enlace o interfaz de red.\n2.4.4 Capa de red o internet.\n2.4.5 Capa de transporte.\n2.4.6 Capa de aplicación.\n2.4.7 Seguridad en TCP/IP.",
+                "2.5 Otros modelos (SNA, DNA, Netware, Appletalk)."
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "Capa física",
+            "duracion": 16.0,
+            "subtemas": [
+                "3.1 Medios de transmisión terrestres o guiados.\n3.1.1 Cable coaxial.\n3.1.2 Par trenzado.\n3.1.3 Fibra óptica.",
+                "3.2 Medios de transmisión aéreos o no guiados.\n3.2.1 Redes inalámbricas.\n3.2.2 Microondas.\n3.2.3 Enlaces satelitales.\n3.2.4 Rayo láser.\n3.2.5 Infrarrojo",
+                "3.3 Estándares de la capa física: RS-232, RS-422, RS-449.",
+                "3.4 Cableado estructurado.\n3.4.1 Estándar EIA/TIA 568.\n3.4.2 Estándar EIA/TIA 569.\n3.4.3 Estándar EIA/TIA 598 /A.\n3.4.4 Estándar EIA/TIA 606.",
+                "3.5 Dispositivos de interconexión.\n3.5.1 Repetidor y Hub.",
+                "3.6 Conexiones a nivel WAN.\n3.6.1 ATM.\n3.6.2 Frame Relay",
+                "3.7 Seguridad a nivel de capa física.\n3.7.1 Confidencialidad en modo con conexión.\n3.7.2 Confidencialidad del flujo de datos."
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "Capa de enlace de datos",
+            "duracion": 16.0,
+            "subtemas": [
+                "4.1 Hand-shaking",
+                "4.2 Transmisión asíncrona y síncrona",
+                "4.3 Protocolos HDLC y SDLC.",
+                "4.4 Control de acceso al medio.\n4.4.1 CSMA/CD y CSMA/CA.\n4.4.2 Token.\n4.4.3 FDDI.",
+                "4.5 Protocolo LLC y MAC del estándar IEEE 802 para redes de área local.\n4.5.1 Capa LLC (IEEE 802.2).\n4.5.2 Ethernet (IEEE 802.3).\n4.5.3 Token Bus y Token Ring (IEEE 802.4 y 802.5).\n4.5.4 Redes inalámbricas.\n4.5.5 MAC Address.",
+                "4.6 Técnicas de conmutación.\n4.6.1 Conmutación de circuitos.\n4.6.2 Conmutación de mensajes.\n4.6.3 Conmutación de paquetes.",
+                "4.7 Dispositivos de interconexión.\n4.7.1 Puente.\n4.7.2 Switch.\n4.7.3 Control de congestión.\n4.7.4 NIC (Network Interface Card).",
+                "4.8 Seguridad a nivel de capa enlace.\n4.8.1 Confidencialidad en modo con conexión.\n4.8.2 Confidencialidad en modo sin conexión."
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "Capa de red",
+            "duracion": 20.0,
+            "subtemas": [
+                "5.1 Protocolos del nivel red.\n5.1.1 Protocolos.\n5.1.2 Protocolo IPX.\n5.1.3 DLS.",
+                "5.2 Redes y subredes.\n5.2.1 Subneting.\n5.2.2 VLSM.\n5.2.3 CIDR.",
+                "5.3 Tablas de ruteo.",
+                "5.4 Protocolos de enrutamiento.\n5.4.1 Algoritmos de enrutamiento estático.\n5.4.2 Algoritmos de enrutamiento dinámico.",
+                "5.5 Servicios orientados a conexión.",
+                "5.6 Servicios no orientados a conexión.",
+                "5.7 Ruteadores.\n5.7.1 Control de la congestión.",
+                "5.8 Seguridad a nivel de capa red.\n5.8.1 Autenticación de participantes.\n5.8.2 Autenticación del origen de datos.\n5.8.3 Servicio de control de acceso.\n5.8.4 Confidencialidad en modo conexión.\n5.8.5 Confidencialidad en modo sin conexión.\n5.8.6 Confidencialidad del flujo de datos.\n5.8.7 Integridad en modo con conexión sin recuperación.\n5.8.8 Integridad en modo sin conexión.\n5.8.9 IPSec."
+            ]
+        },
+        {
+            "numero": 6,
+            "tema": "Capa de transporte",
+            "duracion": 8.0,
+            "subtemas": [
+                "6.1 Servicios de la capa transporte.",
+                "6.2 Manejo de paquetes.\n6.2.1 Fragmentación de paquetes.\n6.2.2 Secuenciamiento.\n6.2.3 Reensamble de paquetes.",
+                "6.3 Control de flujo.\n6.3.1 Solicitud de respuesta automatica (ARQ).\n6.3.2 Parada y espera (Stop-wait).\n6.3.3 Venta deslizante",
+                "6.4 Protocolos del nivel transporte.\n6.4.1 Protocolo TCP.\n6.4.2 Protocolo UDP.",
+                "6.5 Seguridad a nivel de capa transporte.\n6.5.1 Autenticación de participantes.\n6.5.2 Autenticación del origen de datos.\n6.5.3 Servicio de control de acceso.\n6.5.4 Confidencialidad en modo conexión.\n6.5.5 Confidencialidad en modo sin conexión.\n6.5.6 Integridad en modo con conexión con recuperación.\n6.5.7 Integridad en modo con conexión sin recuperación.\n6.5.8 Integridad en modo sin conexión."
+            ]
+        },
+        {
+            "numero": 7,
+            "tema": "Capa de sesión",
+            "duracion": 6.0,
+            "subtemas": [
+                "7.1 Uso de puertos de comunicación.",
+                "7.2 Hand shaking entre aplicaciones.",
+                "7.3 Servicios de nivel sesión.",
+                "7.4 Llamadas a procedimientos remotos (RPC)."
+            ]
+        },
+        {
+            "numero": 8,
+            "tema": "Capa de presentación",
+            "duracion": 6.0,
+            "subtemas": [
+                "8.1 Representaciones comunes de los datos.\n8.1.1 ASCII 7 bits.\n8.1.2 ASCII 8 bits.\n8.1.3 Unicode.",
+                "8.2 Compresión de datos.\n8.2.1 Formatos de compresión con pérdidas.\n8.2.2 Formatos de compresión sin pérdidas.",
+                "8.3 Criptografía.\n8.3.1 Algoritmos simétricos.\n8.3.2 Algoritmos asimétricos.",
+                "8.4 Seguridad a nivel de capa presentación.\n8.4.1 Confidencialidad en modo con conexión.\n8.4.2 Confidencialidad en modo sin conexión.\n8.4.3 Confidencialidad selectiva por elementos"
+            ]
+        },
+        {
+            "numero": 9,
+            "tema": "Capa de aplicación",
+            "duracion": 12.0,
+            "subtemas": [
+                "9.1 HTTP y HTTPS.",
+                "9.2 Compartir archivos.\n9.2.1 SMB.\n9.2.2 NFS.",
+                "9.3 Sesión remota.\n9.3.1 Telnet.\n9.3.2 SSH.",
+                "9.4 Transferencias de archivos.\n9.4.1 FTP.\n9.4.2 SFTP.\n9.4.3 VSFTP.\n9.4.4 TFTP.",
+                "9.5 Correo electrónico",
+                "9.6 Protocolo de autenticación.\n9.6.1 Páginas amarillas (yp).\n9.6.2 LDAP.\n9.6.3 Kerberos.\n9.6.4 Radius.\n9.6.5 Portal captivo o cautivo.",
+                "9.7 Redes sociales.",
+                "9.8 RFC 1700.",
+                "9.9 Seguridad a nivel de capa de aplicación.\n9.9.1 Autenticación de participantes.\n9.9.2 Autenticación del origen de datos.\n9.9.3 Servicio de control de acceso.\n9.9.4 Confidencialidad en modo conexión.\n9.9.5 Confidencialidad en modo sin conexión.\n9.9.6 Confidencialidad selectiva por elementos.\n9.9.7 Confidencialidad del flujo de datos.\n9.9.8 Integridad en modo con conexión con recuperación.\n9.9.9 Integridad en modo con conexión sin recuperación.\n9.9.10 Integridad en modo con conexión selectiva por elementos.\n9.9.11 Integridad en modo sin conexión.\n9.9.12 Integridad en modo sin conexión selectiva por elementos.\n9.9.13 No repudio del origen.\n9.9.14 No repudio del destino."
+            ]
+        }
+    ]
+}

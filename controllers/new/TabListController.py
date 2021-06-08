@@ -1,7 +1,7 @@
 from models import Materia
 from .tab_temario_controller import TabTemarioController
-from .tema_controller import TemaController
-class TabController():
+from .TemaController import TemaController
+class TabListController():
     def __init__(self):
         # [(WidTabTemario,Materia)]
         self.tabs=[]
