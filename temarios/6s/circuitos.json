@@ -2,13 +2,12 @@
     "materia": "Circuitos Eléctricos",
     "salon": "h261",
     "color": "0",
-    "dias": [
-        12,
-        12
-    ],
-    "horas": [
-        12,
-        12
+    "horarios": [
+        {
+            "horaInicio": "15:00",
+            "horaFin": "16:00",
+            "dia": 0
+        }
     ],
     "temas": {
         "1": {

@@ -194,6 +194,24 @@ class Ui_tab_temario(object):
 
         self.retranslateUi(tab_temario)
         QtCore.QMetaObject.connectSlotsByName(tab_temario)
+        tab_temario.setTabOrder(self.materia_in, self.salon_in)
+        tab_temario.setTabOrder(self.salon_in, self.color_box)
+        tab_temario.setTabOrder(self.color_box, self.horario_box)
+        tab_temario.setTabOrder(self.horario_box, self.dia_box)
+        tab_temario.setTabOrder(self.dia_box, self.hora_inicio_in)
+        tab_temario.setTabOrder(self.hora_inicio_in, self.hora_fin_in)
+        tab_temario.setTabOrder(self.hora_fin_in, self.btn_agregar_horario)
+        tab_temario.setTabOrder(self.btn_agregar_horario, self.btn_eliminar_horario)
+        tab_temario.setTabOrder(self.btn_eliminar_horario, self.tema_box)
+        tab_temario.setTabOrder(self.tema_box, self.btn_agregar_tema)
+        tab_temario.setTabOrder(self.btn_agregar_tema, self.btn_eliminar_tema)
+        tab_temario.setTabOrder(self.btn_eliminar_tema, self.num_tema_in)
+        tab_temario.setTabOrder(self.num_tema_in, self.duracion_tema_in)
+        tab_temario.setTabOrder(self.duracion_tema_in, self.nombre_tema_in)
+        tab_temario.setTabOrder(self.nombre_tema_in, self.subtema_in)
+        tab_temario.setTabOrder(self.subtema_in, self.subtemas_list)
+        tab_temario.setTabOrder(self.subtemas_list, self.btn_guardar)
+        tab_temario.setTabOrder(self.btn_guardar, self.scrollArea)
 
     def retranslateUi(self, tab_temario):
         _translate = QtCore.QCoreApplication.translate

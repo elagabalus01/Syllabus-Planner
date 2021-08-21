@@ -17,7 +17,7 @@ class MenuController:
 
     def nuevo(self):
         num_tabs=self.view.tab_widget.count()
-        new_tab=WidTabTemario()
+        new_tab=WidTabTemario(self.view)
         self.tabListController.addWidget(new_tab,None)
         self.view.tab_widget.insertTab(num_tabs,new_tab,"Nuevo archivo")
         self.view.tab_widget.setCurrentIndex(num_tabs)
@@ -25,42 +25,40 @@ class MenuController:
             self.view.actionCalendarizar.setDisabled(False)
 
     def guardar(self):
-        current_widget_id=self.view.tab_widget.currentWidget().id
-        current_model=self.tabListController.get_model_by_id(current_widget_id)
-        if current_model.file:
-            current_model.write()
-        else:
-            self.guardar_como()
+        current_widget_id=None
+        try:
+            current_widget_id=self.view.tab_widget.currentWidget().id
+        except AttributeError:
+            pass
+        if current_widget_id:
+            ctrl=self.tabListController.get_controller_by_id(current_widget_id)
+            ctrl.serializer.write_file(ctrl.model)
 
     def guardar_como(self):
-        current_widget_id=self.view.tab_widget.currentWidget().id
-        current_model=self.tabListController.get_model_by_id(current_widget_id)
-        file_name=QFileDialog.getSaveFileName(self.view,"Guardar archivo",'.','','',QFileDialog.DontUseNativeDialog)[0]
-        current_model.file=file_name
-        current_model.write()
-        index=self.view.tab_widget.currentIndex()
-        self.view.tab_widget.setTabText(index,file_name.split('/')[-1])
-
+        current_widget_id=None
+        try:
+            current_widget_id=self.view.tab_widget.currentWidget().id
+        except AttributeError:
+            pass
+        if current_widget_id:
+            ctrl=self.tabListController.get_controller_by_id(current_widget_id)
+            ctrl.serializer.write_as(ctrl.model)
 
     def abrir(self):
         file_name=QFileDialog.getOpenFileName(self.view,
-        "Abrir archivo","~","Temarios (*.json)")[0]
+        "Abrir archivo","","Temarios (*.json)")[0]
 
         num_tabs=self.view.tab_widget.count()
 
         print(f"Number of tabs {num_tabs}")
+        if len(file_name)>0:
+            new_tab=WidTabTemario(self.view)
+            self.tabListController.addWidget(new_tab,file_name)
 
-        new_tab=WidTabTemario()
-        self.tabListController.addWidget(new_tab,file_name)
-
-        # self.temario_controller=TabTemarioController(new_tab,new_tab.model)
-
-        self.view.tab_widget.insertTab(num_tabs,new_tab,self.file_name.split('/')[-1])
-        self.view.tab_widget.setCurrentIndex(num_tabs)
-        if self.view.tab_widget.count()>0:
-            self.view.actionCalendarizar.setDisabled(False)
-
-        # self.set_form()
+            self.view.tab_widget.insertTab(num_tabs,new_tab,file_name.split('/')[-1])
+            self.view.tab_widget.setCurrentIndex(num_tabs)
+            if self.view.tab_widget.count()>0:
+                self.view.actionCalendarizar.setDisabled(False)
 
     def cerrar(self):
         if self.view.tab_widget.count()>0:

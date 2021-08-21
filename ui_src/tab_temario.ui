@@ -356,6 +356,27 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>materia_in</tabstop>
+  <tabstop>salon_in</tabstop>
+  <tabstop>color_box</tabstop>
+  <tabstop>horario_box</tabstop>
+  <tabstop>dia_box</tabstop>
+  <tabstop>hora_inicio_in</tabstop>
+  <tabstop>hora_fin_in</tabstop>
+  <tabstop>btn_agregar_horario</tabstop>
+  <tabstop>btn_eliminar_horario</tabstop>
+  <tabstop>tema_box</tabstop>
+  <tabstop>btn_agregar_tema</tabstop>
+  <tabstop>btn_eliminar_tema</tabstop>
+  <tabstop>num_tema_in</tabstop>
+  <tabstop>duracion_tema_in</tabstop>
+  <tabstop>nombre_tema_in</tabstop>
+  <tabstop>subtema_in</tabstop>
+  <tabstop>subtemas_list</tabstop>
+  <tabstop>btn_guardar</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

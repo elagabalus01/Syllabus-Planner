@@ -1,9 +1,11 @@
 from models import Tema,Subtema
 from views.widgets.SubtemaDialog import SubtemaDialog
 from PyQt5 import QtCore,QtWidgets,QtGui
-
+from PyQt5.QtGui import QClipboard
+from PyQt5.QtCore import QObject
 class TemaController():
-    def __init__(self,view,model):
+    def __init__(self,view,model,clipboard):
+        self.clipboard=clipboard
         self.view=view
         self.model=model
         self.bind_slots()
@@ -25,8 +27,20 @@ class TemaController():
         print("SHOWING MENU")
         menu=QtWidgets.QMenu()
         action=menu.addAction("Eliminar")
+        clipboard=menu.addAction("Copiar tema")
         action.triggered.connect(self.eliminar_subtema)
+        clipboard.triggered.connect(self.copia_clipboard)
         menu.exec(QtGui.QCursor.pos())
+    def copia_clipboard(self):
+        print("Copiando al clipboard")
+        id=int(self.view.tema_box.currentText())
+
+        current_tema=self.model.getTemaById(id)
+        subtemas=current_tema.subtemas
+
+        subtemas="\n".join([x.nombre for x in subtemas])
+        self.clipboard.setText(subtemas)
+
 
 
     def bind_slots(self):
@@ -54,7 +68,7 @@ class TemaController():
             print("ya existía el tema tema")
         self.agregar_subtemas()
         print(new_tema)
-        self.model.write()
+        self.model.notify_observers(msg="ADD_STATE")
 
     def eliminar_tema(self):
         print("ELIMINANDO TEMA")
@@ -62,7 +76,7 @@ class TemaController():
         num=self.view.tema_box.itemText(index)
         self.model.delete_tema(int(num))
         self.view.tema_box.removeItem(index)
-        self.model.write()
+        self.model.notify_observers(msg="ADD_STATE")
 
     def agregar_subtema(self):
         subtema=self.view.subtema_in.text()
@@ -84,7 +98,7 @@ class TemaController():
             if index!=0:
                 print("Error al leer el tema actual para agregar subtemas")
             return
-        self.model.write()
+        self.model.notify_observers(msg="ADD_STATE")
 
 
     def editar_subtema(self,subtema:str):
@@ -101,7 +115,6 @@ class TemaController():
             if index!=0:
                 print("Error")
             return
-
         self.view.subtemas_list.clear()
         self.view.nombre_tema_in.clear()
         self.view.num_tema_in.setValue(current_tema.numero)

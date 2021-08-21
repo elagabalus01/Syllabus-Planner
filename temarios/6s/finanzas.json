@@ -2,13 +2,12 @@
     "nombre": " finanzas en la ingeniería en computación",
     "salon": "h-265",
     "color": 0,
-    "dias": [
-        1,
-        3
-    ],
-    "horas": [
-        11,
-        12
+    "horarios": [
+        {
+            "horaInicio": "15:00",
+            "horaFin": "16:00",
+            "dia": 0
+        }
     ],
     "temas": [
         {

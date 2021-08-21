@@ -9,12 +9,11 @@ except (ModuleNotFoundError,ImportError):
     from Tema import Tema
     from Subtema import Subtema
     from Horario import Horario
-
-class Materia(object):
-    # dicDias={"Lu":0,"Ma":1,"Mi":2,"Ju":3,"Vi":4,"Sa":5,"Do":6} En des huso
-
+from models.infrastructure.observable import Observable
+class Materia(Observable):
     # Constructor
     def __init__(self):
+        super().__init__()
         self.materia = None
         self.salon = None
         self.color=None

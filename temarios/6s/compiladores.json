@@ -4,14 +4,9 @@
     "color": 1,
     "horarios": [
         {
-            "horaInicio": "09:00",
-            "horaFin": "11:00",
-            "dia": "Ma"
-        },
-        {
-            "horaInicio": "09:00",
-            "horaFin": "11:00",
-            "dia": "Ju"
+            "horaInicio": "15:00",
+            "horaFin": "16:00",
+            "dia": 0
         }
     ],
     "temas": [

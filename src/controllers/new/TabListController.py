@@ -2,10 +2,10 @@ from models import Materia
 from .TabController import TabController
 
 class TabListController():
-    def __init__(self,view):
-        # [(WidTabTemario,Materia)]
-        self.tabs=[]
+    def __init__(self,view,clipboard):
+        self.tabs=[] #[TabController]
         self.view=view
+        self.clipboard=clipboard
 
     def addWidget(self,new_WidTabTemario,file):
         model=Materia()
@@ -13,11 +13,20 @@ class TabListController():
         if file:
             model.recoverJson(file)
             new_WidTabTemario.set_model(model)
-        ctrl=TabController(new_WidTabTemario,model)
+        ctrl=TabController(new_WidTabTemario,model,self.clipboard)
         self.tabs.append(ctrl)
         if ctrl.model.file:
             ctrl.set_form()
 
+    def get_controller_by_id(self,id):
+        i=0
+        for tab in self.tabs:
+            if tab.id==id:
+                return tab
+            else:
+                i=i+1
+        print("No se encontro el controlador con ese ID")
+        return -1
 
     def get_model_by_id(self,id):
         i=0

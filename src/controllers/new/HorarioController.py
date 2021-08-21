@@ -25,6 +25,8 @@ class HorarioController(QObject):
         except IndexError:
             if index!=0:
                 print("ERROR")
+            else:
+                print("Todavía no hay horarios")
             return
         self.view.dia_box.setCurrentIndex(current_horario.dia)
         self.view.hora_inicio_in.setTime(QTime(current_horario.horaInicio))
@@ -37,7 +39,7 @@ class HorarioController(QObject):
         self.view.horario_box.removeItem(index)
         #REMOVING FROM MODEL NOT SECURE
         del self.model.horarios[index]
-        self.model.write()
+        self.model.notify_observers(msg="ADD_STATE")
 
     @pyqtSlot()
     def agregar_horario(self):
@@ -51,4 +53,4 @@ class HorarioController(QObject):
         self.model.horarios.append(new_horario)
         num_horarios=self.view.horario_box.count()
         self.view.horario_box.insertItem(num_horarios,dia2Str(num_dia))
-        self.model.write()
+        self.model.notify_observers(msg="ADD_STATE")

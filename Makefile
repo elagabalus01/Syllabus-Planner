@@ -1,20 +1,33 @@
-run: build
-	python -B main.py
-tkinter:
-	python -B tkinter_ui.py
+src=./src
+views_path=./src/views
+ui_src_path=./ui_src
 
-build: ./views/qt_view.py ./views/widgets/ui_tab_temario.py ./views/widgets/ui_sutema_edit_dialog.py ./views/widgets/ui_calendarizador_dialog.py
+run: build
+	python -B $(src)/main.py
+
+prueba:
+	python -B $(src)/debug.py
+
+tkinter:
+	python -B $(src)/tkinter_ui.py
+
+$widgets=$(views_path)/qt_view.py \
+$(views_path)/widgets/ui_tab_temario.py\
+$(views_path)/widgets/ui_sutema_edit_dialog.py\
+$(views_path)/widgets/ui_calendarizador_dialog.py
+
+build: $(widgets)
 
 rebuild: build run
 
-./views/qt_view.py: ./qt_view/new_view.ui
-	pyuic5 ./qt_view/new_view.ui -o ./views/qt_view/ui_MainWindow.py
+$(views_path)/qt_view.py: $(ui_src_path)/new_view.ui
+	pyuic5 $< -o $@
 
-./views/widgets/ui_tab_temario.py: ./qt_view/tab_temario.ui
-	pyuic5 ./qt_view/tab_temario.ui -o ./views/widgets/ui_tab_temario.py
+$(views_path)/widgets/ui_tab_temario.py: $(ui_src_path)/tab_temario.ui
+	pyuic5 $< -o $@
 
-./views/widgets/ui_sutema_edit_dialog.py: ./qt_view/subtema_dialog.ui
-	pyuic5 ./qt_view/subtema_dialog.ui -o ./views/widgets/ui_sutema_edit_dialog.py
+$(views_path)/widgets/ui_sutema_edit_dialog.py: $(ui_src_path)/subtema_dialog.ui
+	pyuic5 pyuic5 $< -o $@
 
-./views/widgets/ui_calendarizador_dialog.py: ./qt_view/calendarizador_dialog.ui
-	pyuic5 ./qt_view/calendarizador_dialog.ui -o ./views/widgets/ui_calendarizador_dialog.py
+$(views_path)/widgets/ui_calendarizador_dialog.py: $(ui_src_path)/calendarizador_dialog.ui
+	pyuic5 $< -o $@

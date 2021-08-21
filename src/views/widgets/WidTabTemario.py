@@ -6,10 +6,11 @@ import uuid
 class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
     def __init__(self,parent=None):
         super().__init__(parent)
+        self.main_win=parent
         self.id=str(uuid.uuid4())
         self.setupUi(self)
         self.set_catalog()
-        self.bind_signals()
+        # self.bind_signals()
         self.model=None
 
     def set_model(self,model):
@@ -19,10 +20,11 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
         self.color_box.addItems(["Rojo","Verde","Azul","Amarillo"])
         self.dia_box.addItems(["Lu","Ma","Mi","Ju","Vi","Sa"])
 
-    def bind_signals(self):
+
+    # def bind_signals(self):
         # self.horario_box.currentIndexChanged.connect(self.set_current_horario)
         # self.tema_box.currentIndexChanged.connect(self.set_current_tema)
-        self.btn_guardar.pressed.connect(self.read_temario)
+        # self.btn_guardar.pressed.connect(self.read_temario)
 
     # def set_form(self):
     #     self.materia_in.insert(self.model.materia)
@@ -71,10 +73,10 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
     #     subtemas=[subtema.nombre for subtema in current_tema.subtemas]
     #     self.subtemas_list.addItems(subtemas)
 
-    def read_temario(self):
-        self.model.materia=self.materia_in.text()
-        self.model.salon=self.salon_in.text()
-        self.model.color=self.color_box.currentIndex()
+    # def read_temario(self):
+    #     self.model.materia=self.materia_in.text()
+    #     self.model.salon=self.salon_in.text()
+    #     self.model.color=self.color_box.currentIndex()
 
     def clear_form(self):
         self.clear_header()

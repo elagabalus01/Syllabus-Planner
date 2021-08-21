@@ -1,0 +1,82 @@
+{
+    "materia": "Minería de datos",
+    "salon": "h265",
+    "color": 1,
+    "horarios": [
+        {
+            "dia": 1,
+            "horaInicio": "16:00",
+            "horaFin": "18:00"
+        },
+        {
+            "dia": 3,
+            "horaInicio": "16:00",
+            "horaFin": "18:00"
+        }
+    ],
+    "temas": [
+        {
+            "numero": 1,
+            "tema": "Introducción al descubrimiento del conocimiento en base de datos (KDD)\ny la minería de datos",
+            "duracion": 8,
+            "subtemas": [
+                "1.1 Arquitectura del proceso de descubrimiento del conocimiento en base de datos (KDD).\n1.1.1 Entendimiento del dominio del negocio.\n1.1.2 Identificación de los datos relevantes.\n1.1.3 Limpieza de datos.\n1.1.4 Transformación de datos.\n1.1.5 Identificación de tareas de Minería de datos.\n1.1.6 Implementación de algoritmos de minería de datos.\n1.1.7 Interpretación y evaluación de datos",
+                "1.2 El papel de la minería de datos dentro del KDD."
+            ]
+        },
+        {
+            "numero": 2,
+            "tema": "Arquitectura de minería de datos",
+            "duracion": 12,
+            "subtemas": [
+                "2.1 Repositorios",
+                "2.2 Servidores de datos.",
+                "2.3 Base de datos de conocimientos.",
+                "2.4 Proceso de minería de datos.",
+                "2.5 Evaluación."
+            ]
+        },
+        {
+            "numero": 3,
+            "tema": "El proceso de minería de datos",
+            "duracion": 18,
+            "subtemas": [
+                "3.1 Aprendizaje supervisado y no supervisado.",
+                "3.2 Modelos predictivos.",
+                "3.3 Modelos descriptivos",
+                "3.4 Métodos y algoritmos de minería de datos.\n3.4.1 Clasificación.\n3.4.2 Regresión.\n3.4.3 Agrupación.\n3.4.4 Sumarización.\n3.4.5 Modelos de dependencia, correlación.\n3.4.6 Reglas de asociación.\n3.4.7 Detección de cambios y desviaciones",
+                "3.5 Proceso de minería de datos.\n3.5.1 Identificar el modelo predictivo o descriptivo.\n3.5.2 Identificar el método.\n3.5.3 Identificar el algoritmo.\n3.5.4 Generar el modelo.\n3.5.5 Validar el modelo.\n3.5.6 Mejorar el modelo."
+            ]
+        },
+        {
+            "numero": 4,
+            "tema": "Evaluación",
+            "duracion": 14,
+            "subtemas": [
+                "4.1 Entrenamiento y verificación.",
+                "4.2 Predicción del rendimiento.",
+                "4.3 Validación cruzada.",
+                "4.4 Comparación de esquemas de minería de datos",
+                "4.5 Predicción de probabilidades.",
+                "4.6 Conteo del costo",
+                "4.7 Evaluación de predicción numérica.",
+                "4.8 El principio de la descripción de longitud mínima (LDM).",
+                "4.9 Aplicación de la LDM a agrupamientos."
+            ]
+        },
+        {
+            "numero": 5,
+            "tema": "Aplicación en la minería de datos",
+            "duracion": 12,
+            "subtemas": [
+                "5.1 Inferencia de reglas rudimentarias",
+                "5.2 Modelación estadística",
+                "5.3 Construcción de árboles de decisión",
+                "5.4 Algoritmos de cobertura: Reglas de construcción.",
+                "5.5 Reglas de asociación.",
+                "5.6 Modelos lineales.",
+                "5.7 Aprendizaje basado en ocurrencias."
+            ]
+        }
+    ]
+}

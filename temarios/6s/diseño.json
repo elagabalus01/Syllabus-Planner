@@ -2,8 +2,13 @@
     "materia": "Diseño Digital Moderno",
     "salon": "H-2020",
     "color": "red",
-    "dias": "11-11",
-    "horas": "11-11",
+    "horarios": [
+        {
+            "horaInicio": "15:00",
+            "horaFin": "16:00",
+            "dia": 0
+        }
+    ],
     "temas": {
         "1": {
             "nombre": "Introducción",
