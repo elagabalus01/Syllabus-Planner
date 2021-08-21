@@ -55,6 +55,13 @@ class Materia(Observable):
         with open(self.file,'w',encoding="utf-8") as file:
             file.write(self.toJson())
 
+    def delete_subtema(self,id,subtema_str):
+        tema=self.getTemaById(id)
+        if tema:
+            subtemas=tema.subtemas
+            subtemas=[subtema for subtema in subtemas if subtema.nombre != subtema_str]
+            tema.subtemas=subtemas
+
     def delete_tema(self,id):
         tema=self.getTemaById(id)
         if tema:

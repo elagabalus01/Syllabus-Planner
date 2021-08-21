@@ -16,12 +16,16 @@ class TemaController():
         self.view.subtemas_list.customContextMenuRequested.connect(self.show_menu)
 
     def eliminar_subtema(self):
-        print(self.view.subtemas_list.count())
         index=self.view.subtemas_list.currentRow()
-
-        self.view.subtemas_list.takeItem(index)
-        print(self.view.subtemas_list.count())
+        subtema=self.view.subtemas_list.takeItem(index)
+        subtema=subtema.text()
+        # Se determina el tema al que pertenece el subtema
+        index=self.view.tema_box.currentIndex()
+        num=int(self.view.tema_box.itemText(index))
+        print(f"SUbtema a eliminar {num}:{subtema} ")
+        self.model.delete_subtema(num,subtema)
         #DELETING FROM MODEL
+        self.model.notify_observers(msg="ADD_STATE")
 
     def show_menu(self):
         print("SHOWING MENU")
@@ -41,15 +45,12 @@ class TemaController():
         subtemas="\n".join([x.nombre for x in subtemas])
         self.clipboard.setText(subtemas)
 
-
-
     def bind_slots(self):
         self.view.btn_agregar_tema.pressed.connect(self.agregar_tema)
         self.view.btn_eliminar_tema.pressed.connect(self.eliminar_tema)
         self.view.subtema_in.returnPressed.connect(self.agregar_subtema)
         self.view.subtemas_list.itemDoubleClicked.connect(self.editar_subtema)
         self.view.tema_box.currentIndexChanged.connect(self.set_current_tema)
-
 
     def agregar_tema(self):
         new_tema=Tema()
@@ -99,7 +100,6 @@ class TemaController():
                 print("Error al leer el tema actual para agregar subtemas")
             return
         self.model.notify_observers(msg="ADD_STATE")
-
 
     def editar_subtema(self,subtema:str):
         print(subtema.text())
