@@ -102,9 +102,20 @@ class TemaController():
         self.model.notify_observers(msg="ADD_STATE")
 
     def editar_subtema(self,subtema:str):
-        print(subtema.text())
+        texto=""
         dialog=SubtemaDialog(self.view)
+        dialog.text.connect(self.update_subtema)
+        dialog.edit_subtema.setPlainText(subtema.text())
+        dialog.guardar.pressed.connect(dialog.close)
         dialog.exec()
+
+    def update_subtema(self,text):
+        print(f"Se va a modificar el text {text}")
+        row=self.view.subtemas_list.currentRow()
+        item=self.view.subtemas_list.item(row)
+        item.setText(text)
+        self.agregar_subtemas()
+
 
     def set_current_tema(self,index):
         print(f"Current tema changed?{index}")
