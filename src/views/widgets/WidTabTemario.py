@@ -1,8 +1,7 @@
 from .ui_tab_temario import Ui_tab_temario
 from PyQt5 import QtWidgets
-
-
 import uuid
+
 class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
     def __init__(self,parent=None):
         super().__init__(parent)
@@ -17,7 +16,11 @@ class WidTabTemario(QtWidgets.QWidget,Ui_tab_temario):
         self.model=model
 
     def set_catalog(self):
-        self.color_box.addItems(["Rojo","Verde","Azul","Amarillo"])
+        colors_catalog=[
+            'tomato','Flamingo','Tangerine','Banana','Sage','Basil',
+            'Peacock','Blueberry','Lavander','Grape','Graphite'
+        ]
+        self.color_box.addItems(colors_catalog)
         self.dia_box.addItems(["Lu","Ma","Mi","Ju","Vi","Sa"])
 
 
