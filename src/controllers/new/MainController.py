@@ -21,7 +21,7 @@ class MainController():
         self.view.actionCalendarizar.setDisabled(True)
         self.view.tab_widget.tabCloseRequested.connect(self.tab_controller.close_tab)
         self.view.actionCalendarizar.triggered.connect(self.calendarizar_dialog)
-s
+
     def calendarizar_dialog(self):
         current_widget_id=self.view.tab_widget.currentWidget().id
         current_model=self.tab_controller.get_model_by_id(current_widget_id)
