@@ -6,4 +6,5 @@ Comming Up features
 - Observers will comunicate with messages {header:action,payload:message}
 - Calendarizar todos los archivos abiertos
 - Buscador de temas/subtemas
-
+# SCREENSHOTS
+![Screenshot](screenshots/SyllabusPlanner.png?raw=true "SyllabusPlanner")
